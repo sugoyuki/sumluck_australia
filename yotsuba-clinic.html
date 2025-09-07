@@ -558,6 +558,77 @@
             background: #fff;
         }
         
+        /* 下部のオンライン診療メニュー */
+        .bottom-menu-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+        
+        .bottom-menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        
+        .bottom-menu-title {
+            font-size: 32px;
+            color: #ef4444;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+        
+        .bottom-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .bottom-menu-item {
+            background: white;
+            border: 2px solid #ef4444;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #ef4444;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.4;
+        }
+        
+        .bottom-menu-item:hover {
+            background: #ef4444;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(239, 68, 68, 0.2);
+        }
+        
+        @media (max-width: 1024px) {
+            .bottom-menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .bottom-menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .bottom-menu-container {
+                padding: 0 20px;
+            }
+        }
+        
         .three-reasons-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -1025,26 +1096,33 @@
     </section>
 
     <!-- 診療メニュー再掲載 -->
-    <section class="menu-section">
-        <div class="menu-section-container">
-            <h2 class="section-title">オンライン診療のメニュー</h2>
-            <div class="menu-grid">
-                <a href="#" class="menu-item">一般内科</a>
-                <a href="#" class="menu-item">呼吸器科</a>
-                <a href="#" class="menu-item">循環器科</a>
-                <a href="#" class="menu-item">小児科</a>
-                <a href="#" class="menu-item">外科</a>
-                <a href="#" class="menu-item">皮膚科</a>
-                <a href="#" class="menu-item">耳鼻科</a>
-                <a href="#" class="menu-item">眼科</a>
-                <a href="#" class="menu-item">婦人科</a>
-                <a href="#" class="menu-item">心療内科</a>
-                <a href="#" class="menu-item">その他専門科</a>
-                <a href="#" class="menu-item">健康診断</a>
-                <a href="#" class="menu-item">医療通訳<br>サポート</a>
-                <a href="#" class="menu-item">処方薬配送</a>
-                <a href="#" class="menu-item">保険請求<br>サポート</a>
-                <a href="#" class="menu-item">緊急対応</a>
+    <section class="bottom-menu-section">
+        <div class="bottom-menu-container">
+            <h2 class="bottom-menu-title">オンライン診療のメニュー</h2>
+            <div class="bottom-menu-grid">
+                <a href="#" class="bottom-menu-item">低用量ピル</a>
+                <a href="#" class="bottom-menu-item">月経移動</a>
+                <a href="#" class="bottom-menu-item">美容皮膚</a>
+                <a href="#" class="bottom-menu-item">ニキビ治療</a>
+                <a href="#" class="bottom-menu-item">女性AGA</a>
+                <a href="#" class="bottom-menu-item">アフターピル</a>
+                <a href="#" class="bottom-menu-item">男性AGA</a>
+                <a href="#" class="bottom-menu-item">ED・早漏防止</a>
+                <a href="#" class="bottom-menu-item">インフルエンザ<br>予防内服薬</a>
+                <a href="#" class="bottom-menu-item">女性肥満症治療</a>
+                <a href="#" class="bottom-menu-item">男性肥満症治療</a>
+                <a href="#" class="bottom-menu-item">禁煙治療</a>
+                <a href="#" class="bottom-menu-item">花粉症・舌下免疫<br>（保険診療）</a>
+                <a href="#" class="bottom-menu-item">性感染症治療</a>
+                <a href="#" class="bottom-menu-item">漢方</a>
+                <a href="#" class="bottom-menu-item">ドライアイ</a>
+                <a href="#" class="bottom-menu-item">トラベル診療</a>
+                <a href="#" class="bottom-menu-item">アレルギー性結膜炎<br>（保険診療）</a>
+                <a href="#" class="bottom-menu-item">高血圧</a>
+                <a href="#" class="bottom-menu-item">脂質異常症<br>（高脂血症）</a>
+                <a href="#" class="bottom-menu-item">高尿酸血症<br>（痛風発作）</a>
+                <a href="#" class="bottom-menu-item">いびき・睡眠時無呼吸<br>（SAS）</a>
+                <a href="#" class="bottom-menu-item">内科・皮膚科・<br>アレルギー科<br>（保険診療）</a>
             </div>
         </div>
     </section>
