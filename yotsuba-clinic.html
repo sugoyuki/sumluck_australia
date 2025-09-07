@@ -104,67 +104,91 @@
         
         /* ヒーローセクション */
         .hero {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 580"><rect width="1440" height="580" fill="%23ecfdf5"/></svg>') no-repeat center;
-            background-size: cover;
-            height: 580px;
+            background: #ecfdf5;
+            min-height: 500px;
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: center;
+            padding: 60px 0;
         }
         
         .hero-content {
             max-width: 1440px;
             width: 100%;
             margin: 0 auto;
-            padding: 0 220px;
-            position: relative;
-            z-index: 1;
+            padding: 0 120px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-left {
+            flex: 0 0 300px;
+            height: 400px;
+            background: #f0fdf4;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #10b981;
+            font-size: 18px;
+            border: 2px dashed #10b981;
+            opacity: 0.5;
+        }
+        
+        .hero-right {
+            flex: 1;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             color: #10b981;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
             font-weight: bold;
-            line-height: 1.3;
+            line-height: 1.2;
         }
         
         .hero-features {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin: 40px 0;
+            gap: 30px;
             flex-wrap: wrap;
         }
         
         .feature-card {
             background: white;
             border: 2px solid #10b981;
-            border-radius: 12px;
-            padding: 20px 30px;
-            min-width: 250px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
         }
         
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: #10b981;
             border-radius: 50%;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 24px;
+            font-size: 36px;
         }
         
         .feature-text {
-            font-size: 16px;
+            font-size: 18px;
             color: #333;
-            font-weight: 500;
+            font-weight: 600;
+            line-height: 1.4;
         }
         
         /* パンくずリスト */
@@ -186,17 +210,53 @@
         
         /* メニューセクション */
         .menu-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 80px 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .menu-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+        
+        .menu-section-container {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 0 auto;
             padding: 0 220px;
+            position: relative;
+            z-index: 1;
         }
         
         .section-title {
-            font-size: 24px;
-            color: #333;
+            font-size: 32px;
+            color: white;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             font-weight: bold;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
         }
         
         .menu-grid {
@@ -207,27 +267,30 @@
         }
         
         .menu-item {
-            background: white;
-            border: 2px solid #10b981;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 12px;
             padding: 25px 15px;
             text-align: center;
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
+            color: #059669;
+            font-weight: 600;
+            font-size: 15px;
             transition: all 0.3s;
             cursor: pointer;
             min-height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
         }
         
         .menu-item:hover {
-            background: #10b981;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+            background: white;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: #10b981;
         }
         
         /* クリニックフォアのオンライン診療 */
@@ -267,7 +330,7 @@
         .flow-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 220px;
+            padding: 0 64px;
         }
         
         .flow-header {
@@ -298,8 +361,8 @@
         }
         
         .flow-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            justify-content: space-between;
             gap: 30px;
             margin-bottom: 30px;
         }
@@ -310,11 +373,13 @@
             padding: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: relative;
+            flex: 1;
+            max-width: 380px;
         }
         
         .step-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 15px;
             margin-bottom: 20px;
         }
@@ -322,25 +387,27 @@
         .step-number {
             background: #10b981;
             color: white;
-            min-width: 60px;
+            width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 12px;
             flex-shrink: 0;
+        }
+        
+        .step-title-wrapper {
+            flex: 1;
         }
         
         .step-title {
             font-size: 16px;
             font-weight: bold;
             color: #333;
-            background: linear-gradient(to right, #10b981, #059669);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             line-height: 1.4;
+            margin-bottom: 5px;
         }
         
         .step-content {
@@ -354,27 +421,27 @@
         }
         
         .step-subtitle {
-            font-size: 18px;
+            font-size: 16px;
             color: #10b981;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .step-description {
             font-size: 14px;
             color: #666;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         
         .step-image {
-            width: 125px;
-            height: 180px;
+            width: 80px;
+            height: 120px;
             background: #f5f5f5;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: 32px;
             color: #10b981;
             flex-shrink: 0;
         }
@@ -672,60 +739,6 @@
             background: #10b981;
         }
         
-        /* チャットボット */
-        .chatbot {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            height: 530px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .chatbot-header {
-            background: #10b981;
-            color: white;
-            padding: 15px;
-            border-radius: 12px 12px 0 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .chatbot-body {
-            flex: 1;
-            padding: 20px;
-            background: #f9f9f9;
-        }
-        
-        .chatbot-footer {
-            padding: 15px;
-            border-top: 1px solid #e5e5e5;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .chatbot-input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #e5e5e5;
-            border-radius: 4px;
-        }
-        
-        .chatbot-send {
-            background: #10b981;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
         /* PAGE TOPボタン */
         .page-top {
             position: fixed;
@@ -748,6 +761,15 @@
         
         /* レスポンシブ */
         @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+            
+            .hero-left {
+                display: none;
+            }
+            
             .hero h1 {
                 font-size: 32px;
             }
@@ -783,7 +805,7 @@
                 gap: 20px;
             }
             
-            .menu-section,
+            .menu-section-container,
             .intro-container,
             .flow-container,
             .reasons-container,
@@ -791,10 +813,6 @@
                 padding: 0 20px;
             }
             
-            .chatbot {
-                width: 90%;
-                right: 5%;
-            }
         }
     </style>
 </head>
@@ -827,19 +845,24 @@
     <!-- ヒーローセクション -->
     <section class="hero">
         <div class="hero-content">
-            <h1>オンライン診療</h1>
-            <div class="hero-features">
-                <div class="feature-card">
-                    <div class="feature-icon">⏰</div>
-                    <div class="feature-text">すぐに診療を<br>受けられる</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏥</div>
-                    <div class="feature-text">安心の通訳体制</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <div class="feature-text">海外旅行保険の<br>適用</div>
+            <div class="hero-left">
+                人物写真スペース
+            </div>
+            <div class="hero-right">
+                <h1>オンライン診療</h1>
+                <div class="hero-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <div class="feature-text">すぐに診療を<br>受けられる</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏥</div>
+                        <div class="feature-text">安心の通訳体制</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-text">海外旅行保険の<br>適用</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -852,24 +875,26 @@
 
     <!-- 診療メニューセクション -->
     <section class="menu-section">
-        <h2 class="section-title">オンライン診療のメニュー</h2>
-        <div class="menu-grid">
-            <a href="#" class="menu-item">一般内科</a>
-            <a href="#" class="menu-item">呼吸器科</a>
-            <a href="#" class="menu-item">循環器科</a>
-            <a href="#" class="menu-item">小児科</a>
-            <a href="#" class="menu-item">外科</a>
-            <a href="#" class="menu-item">皮膚科</a>
-            <a href="#" class="menu-item">耳鼻科</a>
-            <a href="#" class="menu-item">眼科</a>
-            <a href="#" class="menu-item">婦人科</a>
-            <a href="#" class="menu-item">心療内科</a>
-            <a href="#" class="menu-item">その他専門科</a>
-            <a href="#" class="menu-item">健康診断</a>
-            <a href="#" class="menu-item">医療通訳<br>サポート</a>
-            <a href="#" class="menu-item">処方薬配送</a>
-            <a href="#" class="menu-item">保険請求<br>サポート</a>
-            <a href="#" class="menu-item">緊急対応</a>
+        <div class="menu-section-container">
+            <h2 class="section-title">オンライン診療のメニュー</h2>
+            <div class="menu-grid">
+                <a href="#" class="menu-item">一般内科</a>
+                <a href="#" class="menu-item">呼吸器科</a>
+                <a href="#" class="menu-item">循環器科</a>
+                <a href="#" class="menu-item">小児科</a>
+                <a href="#" class="menu-item">外科</a>
+                <a href="#" class="menu-item">皮膚科</a>
+                <a href="#" class="menu-item">耳鼻科</a>
+                <a href="#" class="menu-item">眼科</a>
+                <a href="#" class="menu-item">婦人科</a>
+                <a href="#" class="menu-item">心療内科</a>
+                <a href="#" class="menu-item">その他専門科</a>
+                <a href="#" class="menu-item">健康診断</a>
+                <a href="#" class="menu-item">医療通訳<br>サポート</a>
+                <a href="#" class="menu-item">処方薬配送</a>
+                <a href="#" class="menu-item">保険請求<br>サポート</a>
+                <a href="#" class="menu-item">緊急対応</a>
+            </div>
         </div>
     </section>
 
@@ -931,13 +956,15 @@
                 <div class="flow-step">
                     <div class="step-header">
                         <div class="step-number">STEP01</div>
-                        <div class="step-title">日時をカレ<br>ンダーから<br>予約</div>
+                        <div class="step-title-wrapper">
+                            <div class="step-title">日時をカレンダーから予約</div>
+                        </div>
                     </div>
                     <div class="step-content">
                         <div class="step-text">
-                            <div class="step-subtitle">簡単<br>予<br>約！</div>
+                            <div class="step-subtitle">簡単予約！</div>
                             <div class="step-description">
-                                カレ<br>ンダ<br>ーか<br>らお<br>好き<br>な<br>日時<br>をタ<br>ップ<br>して<br>予約
+                                カレンダーからお好きな日時をタップして予約
                             </div>
                         </div>
                         <div class="step-image">📅</div>
@@ -947,30 +974,34 @@
                 <div class="flow-step">
                     <div class="step-header">
                         <div class="step-number">STEP02</div>
-                        <div class="step-title">問診に回答<br>し医師と診<br>察</div>
+                        <div class="step-title-wrapper">
+                            <div class="step-title">問診に回答し医師と診察</div>
+                        </div>
                     </div>
                     <div class="step-content">
                         <div class="step-text">
-                            <div class="step-subtitle">スム<br>ーズ<br>な診<br>察！</div>
+                            <div class="step-subtitle">スムーズな診察！</div>
                             <div class="step-description">
-                                カメ<br>ラ、<br>マイ<br>ク付<br>きの<br>スマ<br>ホ、<br>パソ<br>コン<br>で
+                                カメラ、マイク付きのスマホ、パソコンで
                             </div>
                         </div>
-                        <div class="step-image">🗨</div>
+                        <div class="step-image">💬</div>
                     </div>
                 </div>
                 
                 <div class="flow-step">
                     <div class="step-header">
                         <div class="step-number">STEP03</div>
-                        <div class="step-title">お薬は、最短<br>翌日<br>ご自宅のポス<br>トにお届け</div>
+                        <div class="step-title-wrapper">
+                            <div class="step-title">お薬は、最短翌日<br>ご自宅のポストにお届け</div>
+                        </div>
                     </div>
                     <div class="step-content">
                         <div class="step-text">
-                            <div class="step-subtitle">最短<br>翌日<br>到<br>着！</div>
+                            <div class="step-subtitle">最短翌日到着！</div>
                             <div class="step-description">
-                                お支払<br>いは<br>クレジ<br>ットカ<br>ード、<br>Paidy、<br>Amazon<br>pay、<br>GMO後<br>払い※、<br>代引き<br>で<br><br>
-                                <small style="font-size: 10px; line-height: 1.2;">※お薬到<br>着後コン<br>ビニ・銀<br>行でお支<br>払いをい<br>ただけま<br>す</small>
+                                お支払いはクレジットカード、Paidy、Amazon pay、GMO後払い※、代引きで<br>
+                                <small style="font-size: 10px;">※お薬到着後コンビニ・銀行でお支払いをいただけます</small>
                             </div>
                         </div>
                         <div class="step-image">📦</div>
@@ -1052,24 +1083,26 @@
 
     <!-- 診療メニュー再掲載 -->
     <section class="menu-section">
-        <h2 class="section-title">オンライン診療のメニュー</h2>
-        <div class="menu-grid">
-            <a href="#" class="menu-item">一般内科</a>
-            <a href="#" class="menu-item">呼吸器科</a>
-            <a href="#" class="menu-item">循環器科</a>
-            <a href="#" class="menu-item">小児科</a>
-            <a href="#" class="menu-item">外科</a>
-            <a href="#" class="menu-item">皮膚科</a>
-            <a href="#" class="menu-item">耳鼻科</a>
-            <a href="#" class="menu-item">眼科</a>
-            <a href="#" class="menu-item">婦人科</a>
-            <a href="#" class="menu-item">心療内科</a>
-            <a href="#" class="menu-item">その他専門科</a>
-            <a href="#" class="menu-item">健康診断</a>
-            <a href="#" class="menu-item">医療通訳<br>サポート</a>
-            <a href="#" class="menu-item">処方薬配送</a>
-            <a href="#" class="menu-item">保険請求<br>サポート</a>
-            <a href="#" class="menu-item">緊急対応</a>
+        <div class="menu-section-container">
+            <h2 class="section-title">オンライン診療のメニュー</h2>
+            <div class="menu-grid">
+                <a href="#" class="menu-item">一般内科</a>
+                <a href="#" class="menu-item">呼吸器科</a>
+                <a href="#" class="menu-item">循環器科</a>
+                <a href="#" class="menu-item">小児科</a>
+                <a href="#" class="menu-item">外科</a>
+                <a href="#" class="menu-item">皮膚科</a>
+                <a href="#" class="menu-item">耳鼻科</a>
+                <a href="#" class="menu-item">眼科</a>
+                <a href="#" class="menu-item">婦人科</a>
+                <a href="#" class="menu-item">心療内科</a>
+                <a href="#" class="menu-item">その他専門科</a>
+                <a href="#" class="menu-item">健康診断</a>
+                <a href="#" class="menu-item">医療通訳<br>サポート</a>
+                <a href="#" class="menu-item">処方薬配送</a>
+                <a href="#" class="menu-item">保険請求<br>サポート</a>
+                <a href="#" class="menu-item">緊急対応</a>
+            </div>
         </div>
     </section>
 
@@ -1144,20 +1177,6 @@
         </div>
     </footer>
 
-    <!-- チャットボット -->
-    <div class="chatbot">
-        <div class="chatbot-header">
-            <span style="font-size: 24px;">💬</span>
-            <span>ご質問はこちら</span>
-        </div>
-        <div class="chatbot-body">
-            <p style="text-align: center; color: #666; margin-top: 150px;">BOT対応中</p>
-        </div>
-        <div class="chatbot-footer">
-            <input type="text" class="chatbot-input" placeholder="メッセージを入力">
-            <button class="chatbot-send">送信</button>
-        </div>
-    </div>
 
     <!-- PAGE TOPボタン -->
     <a href="#" class="page-top">PAGE TOP</a>
