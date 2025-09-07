@@ -248,9 +248,9 @@
       }
 
       .menu-section-container {
-        max-width: 1200px;
+        max-width: 1600px;
         margin: 0 auto;
-        padding: 0 220px;
+        padding: 0 60px;
         position: relative;
         z-index: 1;
       }
@@ -281,35 +281,59 @@
       .menu-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        gap: 24px;
         margin-bottom: 60px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .menu-item {
-        background: rgba(255, 255, 255, 0.95);
+        background: rgba(255, 255, 255, 0.98);
         border: none;
-        border-radius: 12px;
-        padding: 25px 15px;
+        border-radius: 16px;
+        padding: 30px 35px;
         text-align: center;
         text-decoration: none;
-        color: #059669;
-        font-weight: 600;
-        font-size: 15px;
         transition: all 0.3s;
         cursor: pointer;
-        min-height: 90px;
+        min-height: 130px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        justify-content: flex-start;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         backdrop-filter: blur(10px);
+        position: relative;
+      }
+
+      .menu-item-title {
+        color: #047857;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        display: block;
+      }
+
+      .menu-item-desc {
+        color: #374151;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 400;
       }
 
       .menu-item:hover {
         background: white;
         transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .menu-item:hover .menu-item-title {
         color: #10b981;
+      }
+
+      .menu-item:hover .menu-item-desc {
+        color: #1f2937;
       }
 
       /* よつばオンラインメディカルのオンライン診療 */
@@ -1068,51 +1092,51 @@
         <div class="menu-grid">
           <div class="menu-item">
             <div class="menu-item-title">一般内科</div>
-            <div class="menu-item-desc">風邪、インフルエンザ、食中毒、下痢、腹痛、頭痛など</div>
+            <div class="menu-item-desc">風邪、インフルエンザ、<br>食中毒、下痢、腹痛、<br>頭痛など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">呼吸器科</div>
-            <div class="menu-item-desc">喘息、気管支炎、肺炎、結核など</div>
+            <div class="menu-item-desc">喘息、気管支炎、<br>肺炎、結核など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">循環器科</div>
-            <div class="menu-item-desc">高血圧、不整脈、心臓病など</div>
+            <div class="menu-item-desc">高血圧、不整脈、<br>心臓病など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">小児科</div>
-            <div class="menu-item-desc">お子様の体調不良、予防接種、発育相談</div>
+            <div class="menu-item-desc">お子様の体調不良、<br>予防接種、発育相談</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">外科</div>
-            <div class="menu-item-desc">怪我、切り傷、やけど、ねんざなど</div>
+            <div class="menu-item-desc">怪我、切り傷、やけど、<br>ねんざなど</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">皮膚科</div>
-            <div class="menu-item-desc">にきび、湿疹、じんましんなど</div>
+            <div class="menu-item-desc">にきび、湿疹、<br>じんましんなど</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">耳鼻科</div>
-            <div class="menu-item-desc">耳、鼻、のどの疾患、アレルギー性鼻炎や花粉症など</div>
+            <div class="menu-item-desc">耳、鼻、のどの疾患、<br>アレルギー性鼻炎や<br>花粉症など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">眼科</div>
-            <div class="menu-item-desc">ものもらい、結膜炎、眼精疲労など</div>
+            <div class="menu-item-desc">ものもらい、結膜炎、<br>眼精疲労など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">婦人科</div>
-            <div class="menu-item-desc">女性医師・女性スタッフが対応します</div>
+            <div class="menu-item-desc">女性医師・<br>女性スタッフが<br>対応します</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">心療内科</div>
-            <div class="menu-item-desc">不眠、不安症状、抑うつ症状、ストレス関連疾患など</div>
+            <div class="menu-item-desc">不眠、不安症状、<br>抑うつ症状、<br>ストレス関連疾患など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">その他専門科</div>
-            <div class="menu-item-desc">循環器科、消化器科、整形外科、泌尿器科など</div>
+            <div class="menu-item-desc">循環器科、消化器科、<br>整形外科、泌尿器科など</div>
           </div>
           <div class="menu-item">
             <div class="menu-item-title">健康診断</div>
-            <div class="menu-item-desc">予約代行可能です。健診レポートをオプションで日本語訳も可能です。</div>
+            <div class="menu-item-desc">予約代行可能です。<br>健診レポートを<br>オプションで<br>日本語訳も可能です。</div>
           </div>
         </div>
       </div>
