@@ -418,20 +418,29 @@
       }
 
       .flow-steps {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         margin-bottom: 30px;
+      }
+
+      .flow-steps-row2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-bottom: 30px;
+        max-width: 66.66%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .flow-step {
         background: white;
         border-radius: 12px;
-        padding: 30px;
+        padding: 30px 25px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         position: relative;
-        flex: 1;
-        max-width: 380px;
+        min-height: 320px;
       }
 
       .step-header {
@@ -1191,15 +1200,15 @@
             <div class="step-header">
               <div class="step-number">STEP01</div>
               <div class="step-title-wrapper">
-                <div class="step-title">日時をカレンダーから予約</div>
+                <div class="step-title">アプリ/Webサイトにアクセス</div>
               </div>
             </div>
             <div class="step-content">
               <div class="step-text">
-                <div class="step-subtitle">簡単予約！</div>
-                <div class="step-description">カレンダーからお好きな日時をタップして予約</div>
+                <div class="step-subtitle">簡単アクセス！</div>
+                <div class="step-description">スマホやPCからアクセス。アプリのダウンロードは不要です</div>
               </div>
-              <div class="step-image">📅</div>
+              <div class="step-image">💻</div>
             </div>
           </div>
 
@@ -1207,15 +1216,15 @@
             <div class="step-header">
               <div class="step-number">STEP02</div>
               <div class="step-title-wrapper">
-                <div class="step-title">問診に回答し医師と診察</div>
+                <div class="step-title">診療科を選択し、日時を予約</div>
               </div>
             </div>
             <div class="step-content">
               <div class="step-text">
-                <div class="step-subtitle">スムーズな診察！</div>
-                <div class="step-description">カメラ、マイク付きのスマホ、パソコンで</div>
+                <div class="step-subtitle">予約も簡単！</div>
+                <div class="step-description">診療科を選んで、カレンダーから希望の日時を選択</div>
               </div>
-              <div class="step-image">💬</div>
+              <div class="step-image">📅</div>
             </div>
           </div>
 
@@ -1223,18 +1232,49 @@
             <div class="step-header">
               <div class="step-number">STEP03</div>
               <div class="step-title-wrapper">
-                <div class="step-title">お薬は、最短翌日<br />ご自宅のポストにお届け</div>
+                <div class="step-title">事前問診に回答</div>
               </div>
             </div>
             <div class="step-content">
               <div class="step-text">
-                <div class="step-subtitle">最短翌日到着！</div>
-                <div class="step-description">
-                  お支払いはクレジットカード、Paidy、Amazon pay、GMO後払い※、代引きで<br />
-                  <small style="font-size: 10px">※お薬到着後コンビニ・銀行でお支払いをいただけます</small>
-                </div>
+                <div class="step-subtitle">スムーズな診察準備！</div>
+                <div class="step-description">症状や既往歴などの問診票に回答</div>
               </div>
-              <div class="step-image">📦</div>
+              <div class="step-image">📝</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-steps-row2">
+          <div class="flow-step">
+            <div class="step-header">
+              <div class="step-number">STEP04</div>
+              <div class="step-title-wrapper">
+                <div class="step-title">医師とビデオ通話で診察</div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-text">
+                <div class="step-subtitle">安心の診察！</div>
+                <div class="step-description">日本人医師または日本語通訳付きで診察</div>
+              </div>
+              <div class="step-image">👨‍⚕️</div>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="step-header">
+              <div class="step-number">STEP05</div>
+              <div class="step-title-wrapper">
+                <div class="step-title">処方箋の受け取り</div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-text">
+                <div class="step-subtitle">便利な受け取り！</div>
+                <div class="step-description">電子処方箋をメールで受信、または薬局で直接受け取り</div>
+              </div>
+              <div class="step-image">💊</div>
             </div>
           </div>
         </div>
