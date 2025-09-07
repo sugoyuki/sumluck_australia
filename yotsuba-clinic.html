@@ -1,1382 +1,1391 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>オンライン診療 | よつばジャパンクリニック</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-        
-        /* ヘッダー */
-        header {
-            background: #fff;
-            border-bottom: 1px solid #e5e5e5;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            width: 42px;
-            height: 42px;
-            background: #10b981;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-        }
-        
-        .logo-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-            padding: 10px 12px;
-            transition: opacity 0.3s;
-        }
-        
-        nav a:hover {
-            opacity: 0.7;
-        }
-        
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .btn-appointment {
-            background: #10b981;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        
-        .btn-appointment:hover {
-            background: #059669;
-        }
-        
-        /* ヒーローセクション */
-        .hero {
-            background: #f9fafb;
-            min-height: 550px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
-        }
-        
-        .hero-content {
-            max-width: 1400px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 60px;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-        
-        .hero-left {
-            flex: 0 0 350px;
-            height: 400px;
-            background: #f9fafb;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-size: 16px;
-            border: 2px dashed #d1d5db;
-        }
-        
-        .hero-right {
-            flex: 1;
-        }
-        
-        .hero-top-text {
-            color: #10b981;
-            font-size: 22px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 72px;
-            color: #10b981;
-            margin-bottom: 50px;
-            font-weight: bold;
-            line-height: 1.1;
-            text-align: center;
-        }
-        
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 45px;
-        }
-        
-        .feature-card {
-            background: white;
-            border: 3px solid #10b981;
-            border-radius: 16px;
-            padding: 20px 35px;
-            min-width: 240px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 85px;
-        }
-        
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: #10b981;
-            border-radius: 50%;
-            position: absolute;
-            top: -32px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 30px;
-        }
-        
-        .feature-text {
-            font-size: 18px;
-            color: #333;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .hero-bottom-text {
-            color: #10b981;
-            font-size: 22px;
-            text-align: center;
-            font-weight: 500;
-            margin-top: 20px;
-        }
-        
-        /* パンくずリスト */
-        .breadcrumb {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 220px;
-            font-size: 13px;
-        }
-        
-        .breadcrumb a {
-            color: #666;
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        
-        /* メニューセクション */
-        .menu-section {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            padding: 80px 0;
-            margin: 0;
-            position: relative;
-        }
-        
-        .menu-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
-            background-size: 100px 100px;
-            opacity: 0.3;
-        }
-        
-        .menu-section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 220px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .section-title {
-            font-size: 32px;
-            color: white;
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: bold;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 2px;
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-        
-        .menu-item {
-            background: rgba(255, 255, 255, 0.95);
-            border: none;
-            border-radius: 12px;
-            padding: 25px 15px;
-            text-align: center;
-            text-decoration: none;
-            color: #059669;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s;
-            cursor: pointer;
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .menu-item:hover {
-            background: white;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            color: #10b981;
-        }
-        
-        /* よつばジャパンクリニックのオンライン診療 */
-        .intro-section {
-            background: #fff;
-            padding: 80px 0;
-        }
-        
-        .intro-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 60px;
-            text-align: center;
-        }
-        
-        .intro-title {
-            font-size: 42px;
-            color: #059669;
-            margin-bottom: 25px;
-            font-weight: bold;
-            line-height: 1.3;
-        }
-        
-        .intro-description {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        /* 診療の流れ */
-        .flow-section {
-            background: #fff;
-            padding: 60px 0;
-        }
-        
-        .flow-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 64px;
-        }
-        
-        .flow-header {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .flow-header h2 {
-            font-size: 32px;
-            color: #059669;
-            display: inline-block;
-            padding: 0 30px;
-            background: #fff;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .flow-header::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #059669;
-            z-index: 1;
-        }
-        
-        .flow-steps {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .flow-step {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            position: relative;
-            flex: 1;
-            max-width: 380px;
-        }
-        
-        .step-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .step-number {
-            background: #059669;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 12px;
-            flex-shrink: 0;
-        }
-        
-        .step-title-wrapper {
-            flex: 1;
-        }
-        
-        .step-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            line-height: 1.4;
-            margin-bottom: 5px;
-        }
-        
-        .step-content {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-        
-        .step-text {
-            flex: 1;
-        }
-        
-        .step-subtitle {
-            font-size: 16px;
-            color: #059669;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .step-description {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.7;
-        }
-        
-        .step-image {
-            width: 80px;
-            height: 120px;
-            background: #f5f5f5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: #10b981;
-            flex-shrink: 0;
-        }
-        
-        .faq-link {
-            text-align: center;
-            padding: 30px 0;
-            font-size: 16px;
-        }
-        
-        .faq-link a {
-            color: #059669;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .faq-link a:hover {
-            text-decoration: underline;
-        }
-        
-        /* 選ばれる理由 */
-        .reasons-section {
-            padding: 80px 0;
-            background: #fff;
-        }
-        
-        .reasons-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-        
-        .main-section-title {
-            font-size: 34px;
-            color: #059669;
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: bold;
-        }
-        
-        .reasons-grid-display {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .reason-display-item {
-            background: white;
-            border: 2px solid #10b981;
-            border-radius: 12px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .reason-display-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
-        }
-        
-        .reason-icon-wrapper {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #10b981;
-            border-radius: 50%;
-        }
-        
-        .reason-icon {
-            color: white;
-            font-size: 40px;
-        }
-        
-        .reason-title {
-            font-size: 18px;
-            color: #333;
-            font-weight: bold;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-        
-        .reason-description {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* 3つの理由 */
-        .three-reasons-section {
-            padding: 60px 0;
-            background: #fff;
-        }
-        
-        /* 下部のオンライン診療メニュー */
-        .bottom-menu-section {
-            background: #fff;
-            padding: 80px 0;
-        }
-        
-        .bottom-menu-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-        
-        .bottom-menu-title {
-            font-size: 32px;
-            color: #059669;
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: bold;
-        }
-        
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3",
+          "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+      }
+
+      /* ヘッダー */
+      header {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 42px;
+        height: 42px;
+        background: #10b981;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+      }
+
+      .logo-text {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        padding: 10px 12px;
+        transition: opacity 0.3s;
+      }
+
+      nav a:hover {
+        opacity: 0.7;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .btn-appointment {
+        background: #10b981;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .btn-appointment:hover {
+        background: #059669;
+      }
+
+      /* ヒーローセクション */
+      .hero {
+        background: #f9fafb;
+        min-height: 550px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 60px 0;
+      }
+
+      .hero-content {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 60px;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .hero-left {
+        flex: 0 0 350px;
+        height: 400px;
+        background: #f9fafb;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9ca3af;
+        font-size: 16px;
+        border: 2px dashed #d1d5db;
+      }
+
+      .hero-right {
+        flex: 1;
+      }
+
+      .hero-top-text {
+        color: #10b981;
+        font-size: 22px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 72px;
+        color: #10b981;
+        margin-bottom: 50px;
+        font-weight: bold;
+        line-height: 1.1;
+        text-align: center;
+      }
+
+      .hero-features {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 45px;
+      }
+
+      .feature-card {
+        background: white;
+        border: 3px solid #10b981;
+        border-radius: 16px;
+        padding: 20px 35px;
+        min-width: 240px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 85px;
+      }
+
+      .feature-icon {
+        width: 64px;
+        height: 64px;
+        background: #10b981;
+        border-radius: 50%;
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+      }
+
+      .feature-text {
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+        line-height: 1.4;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .hero-bottom-text {
+        color: #10b981;
+        font-size: 22px;
+        text-align: center;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      /* パンくずリスト */
+      .breadcrumb {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 220px;
+        font-size: 13px;
+      }
+
+      .breadcrumb a {
+        color: #666;
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+
+      /* メニューセクション */
+      .menu-section {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        padding: 80px 0;
+        margin: 0;
+        position: relative;
+      }
+
+      .menu-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>')
+          repeat;
+        background-size: 100px 100px;
+        opacity: 0.3;
+      }
+
+      .menu-section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 220px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        font-size: 32px;
+        color: white;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 2px;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 60px;
+      }
+
+      .menu-item {
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 12px;
+        padding: 25px 15px;
+        text-align: center;
+        text-decoration: none;
+        color: #059669;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s;
+        cursor: pointer;
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      .menu-item:hover {
+        background: white;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        color: #10b981;
+      }
+
+      /* よつばジャパンクリニックのオンライン診療 */
+      .intro-section {
+        background: #fff;
+        padding: 80px 0;
+      }
+
+      .intro-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px;
+        text-align: center;
+      }
+
+      .intro-title {
+        font-size: 42px;
+        color: #059669;
+        margin-bottom: 25px;
+        font-weight: bold;
+        line-height: 1.3;
+      }
+
+      .intro-description {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* 診療の流れ */
+      .flow-section {
+        background: #fff;
+        padding: 60px 0;
+      }
+
+      .flow-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 64px;
+      }
+
+      .flow-header {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+      }
+
+      .flow-header h2 {
+        font-size: 32px;
+        color: #059669;
+        display: inline-block;
+        padding: 0 30px;
+        background: #fff;
+        position: relative;
+        z-index: 2;
+      }
+
+      .flow-header::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #059669;
+        z-index: 1;
+      }
+
+      .flow-steps {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .flow-step {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        position: relative;
+        flex: 1;
+        max-width: 380px;
+      }
+
+      .step-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .step-number {
+        background: #059669;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      .step-title-wrapper {
+        flex: 1;
+      }
+
+      .step-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+
+      .step-content {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .step-text {
+        flex: 1;
+      }
+
+      .step-subtitle {
+        font-size: 16px;
+        color: #059669;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .step-description {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.7;
+      }
+
+      .step-image {
+        width: 80px;
+        height: 120px;
+        background: #f5f5f5;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: #10b981;
+        flex-shrink: 0;
+      }
+
+      .faq-link {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 16px;
+      }
+
+      .faq-link a {
+        color: #059669;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .faq-link a:hover {
+        text-decoration: underline;
+      }
+
+      /* 選ばれる理由 */
+      .reasons-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+
+      .reasons-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+
+      .main-section-title {
+        font-size: 34px;
+        color: #059669;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: bold;
+      }
+
+      .reasons-grid-display {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .reason-display-item {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 35px 25px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .reason-display-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(16, 185, 129, 0.15);
+      }
+
+      .reason-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #10b981;
+        border-radius: 50%;
+      }
+
+      .reason-icon {
+        color: white;
+        font-size: 40px;
+      }
+
+      .reason-title {
+        font-size: 18px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .reason-description {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* 3つの理由 */
+      .three-reasons-section {
+        padding: 60px 0;
+        background: #fff;
+      }
+
+      /* 下部のオンライン診療メニュー */
+      .bottom-menu-section {
+        background: #fff;
+        padding: 80px 0;
+      }
+
+      .bottom-menu-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+
+      .bottom-menu-title {
+        font-size: 32px;
+        color: #059669;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: bold;
+      }
+
+      .bottom-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .bottom-menu-item {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 20px 15px;
+        text-align: center;
+        text-decoration: none;
+        color: #059669;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.3s;
+        cursor: pointer;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.4;
+      }
+
+      .bottom-menu-item:hover {
+        background: #10b981;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(16, 185, 129, 0.2);
+      }
+
+      @media (max-width: 1024px) {
         .bottom-menu-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+          grid-template-columns: repeat(3, 1fr);
         }
-        
-        .bottom-menu-item {
-            background: white;
-            border: 2px solid #10b981;
-            border-radius: 12px;
-            padding: 20px 15px;
-            text-align: center;
-            text-decoration: none;
-            color: #059669;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s;
-            cursor: pointer;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .bottom-menu-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
         }
-        
-        .bottom-menu-item:hover {
-            background: #10b981;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(16, 185, 129, 0.2);
+
+        .bottom-menu-container {
+          padding: 0 20px;
         }
-        
-        @media (max-width: 1024px) {
-            .bottom-menu-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .bottom-menu-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .bottom-menu-container {
-                padding: 0 20px;
-            }
-        }
-        
-        .three-reasons-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 220px;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 50px;
-        }
-        
-        .reasons-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .reason-card {
-            background: white;
-            border: 2px solid #10b981;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .reason-icon {
-            width: 80px;
-            height: 80px;
-            background: #10b981;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 36px;
-        }
-        
-        .reason-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .reason-description {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.8;
-        }
-        
-        /* オンライン診療とは */
-        .online-about-section {
-            background: #f9fafb;
-            padding: 80px 0;
-        }
-        
-        .online-about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 60px;
-        }
-        
+      }
+
+      .three-reasons-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 220px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 50px;
+      }
+
+      .reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .reason-card {
+        background: white;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .reason-icon {
+        width: 80px;
+        height: 80px;
+        background: #10b981;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 36px;
+      }
+
+      .reason-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .reason-description {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      /* オンライン診療とは */
+      .online-about-section {
+        background: #f9fafb;
+        padding: 80px 0;
+      }
+
+      .online-about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+
+      .online-about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .online-about-item {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .online-about-header {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 20px;
+      }
+
+      .section-red-marker {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        background: #10b981;
+      }
+
+      .online-about-header h2 {
+        font-size: 28px;
+        color: #333;
+        font-weight: bold;
+        line-height: 1.3;
+        margin-bottom: 8px;
+      }
+
+      .section-label {
+        font-size: 14px;
+        color: #10b981;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .online-about-text {
+        padding-left: 20px;
+      }
+
+      .online-about-text p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .online-about-text strong {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .merit-item {
+        background: #ecfdf5;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .merit-item h3 {
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .merit-item p {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .online-about-footer {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        position: relative;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .online-about-footer h3 {
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .footer-label {
+        font-size: 14px;
+        color: #10b981;
+        font-weight: bold;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      .recommend-box {
+        background: #ecfdf5;
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 30px;
+      }
+
+      .recommend-box ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .recommend-box li {
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 15px;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .recommend-box li:before {
+        content: "●";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #10b981;
+      }
+
+      @media (max-width: 768px) {
         .online-about-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            margin-bottom: 60px;
+          grid-template-columns: 1fr;
+          gap: 30px;
         }
-        
-        .online-about-item {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+        .online-about-container {
+          padding: 0 20px;
         }
-        
-        .online-about-header {
-            position: relative;
-            margin-bottom: 30px;
-            padding-left: 20px;
+      }
+
+      /* フッター */
+      footer {
+        background: #2c3e50;
+        color: white;
+        padding: 60px 0 20px;
+        margin-top: 80px;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 120px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #10b981;
+      }
+
+      .footer-section h4 {
+        font-size: 14px;
+        margin: 15px 0 10px;
+        color: #95a5a6;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section li {
+        margin-bottom: 12px;
+      }
+
+      .footer-section a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #10b981;
+      }
+
+      .footer-section p {
+        font-size: 14px;
+        color: #95a5a6;
+        line-height: 1.8;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 20px;
+        border-top: 1px solid #34495e;
+        font-size: 14px;
+        color: #95a5a6;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        background: #34495e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .social-link:hover {
+        background: #10b981;
+      }
+
+      /* PAGE TOPボタン */
+      .page-top {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        background: #34495e;
+        color: white;
+        padding: 15px 10px;
+        text-decoration: none;
+        writing-mode: vertical-rl;
+        border-radius: 4px;
+        font-size: 14px;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+
+      .page-top:hover {
+        opacity: 1;
+      }
+
+      /* レスポンシブ */
+      @media (max-width: 768px) {
+        .hero-content {
+          flex-direction: column;
+          padding: 0 20px;
         }
-        
-        .section-red-marker {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: #10b981;
+
+        .hero-left {
+          display: none;
         }
-        
-        .online-about-header h2 {
-            font-size: 28px;
-            color: #333;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 8px;
+
+        .hero h1 {
+          font-size: 32px;
         }
-        
-        .section-label {
-            font-size: 14px;
-            color: #10b981;
-            font-weight: bold;
-            letter-spacing: 2px;
+
+        .flow-steps {
+          grid-template-columns: 1fr;
         }
-        
-        .online-about-text {
-            padding-left: 20px;
+
+        .menu-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         }
-        
-        .online-about-text p {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 15px;
+
+        .reasons-grid {
+          grid-template-columns: 1fr;
         }
-        
-        .online-about-text strong {
-            font-weight: bold;
-            color: #333;
+
+        .reasons-grid-display {
+          grid-template-columns: 1fr;
         }
-        
-        .merit-item {
-            background: #ecfdf5;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .merit-item h3 {
-            font-size: 16px;
-            color: #333;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-        
-        .merit-item p {
-            font-size: 14px;
-            line-height: 1.7;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        
-        .online-about-footer {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        .online-about-footer h3 {
-            font-size: 24px;
-            color: #333;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        
-        .footer-label {
-            font-size: 14px;
-            color: #10b981;
-            font-weight: bold;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 30px;
-        }
-        
-        .recommend-box {
-            background: #ecfdf5;
-            border: 2px solid #10b981;
-            border-radius: 12px;
-            padding: 30px;
-        }
-        
-        .recommend-box ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .recommend-box li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 15px;
-            font-size: 15px;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .recommend-box li:before {
-            content: '●';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #10b981;
-        }
-        
-        @media (max-width: 768px) {
-            .online-about-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .online-about-container {
-                padding: 0 20px;
-            }
-        }
-        
-        /* フッター */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 60px 0 20px;
-            margin-top: 80px;
-        }
-        
+
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 120px;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 40px;
+          grid-template-columns: 1fr;
+          padding: 0 20px;
         }
-        
-        .footer-section h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #10b981;
+
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
         }
-        
-        .footer-section h4 {
-            font-size: 14px;
-            margin: 15px 0 10px;
-            color: #95a5a6;
+
+        .header-container {
+          flex-direction: column;
+          gap: 20px;
         }
-        
-        .footer-section ul {
-            list-style: none;
+
+        .menu-section-container,
+        .intro-container,
+        .flow-container,
+        .reasons-container,
+        .three-reasons-container {
+          padding: 0 20px;
         }
-        
-        .footer-section li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-section a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        
-        .footer-section a:hover {
-            color: #10b981;
-        }
-        
-        .footer-section p {
-            font-size: 14px;
-            color: #95a5a6;
-            line-height: 1.8;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid #34495e;
-            font-size: 14px;
-            color: #95a5a6;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: #34495e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        
-        .social-link:hover {
-            background: #10b981;
-        }
-        
-        /* PAGE TOPボタン */
-        .page-top {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            background: #34495e;
-            color: white;
-            padding: 15px 10px;
-            text-decoration: none;
-            writing-mode: vertical-rl;
-            border-radius: 4px;
-            font-size: 14px;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        
-        .page-top:hover {
-            opacity: 1;
-        }
-        
-        /* レスポンシブ */
-        @media (max-width: 768px) {
-            .hero-content {
-                flex-direction: column;
-                padding: 0 20px;
-            }
-            
-            .hero-left {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .flow-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .menu-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-            
-            .reasons-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .reasons-grid-display {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                padding: 0 20px;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .menu-section-container,
-            .intro-container,
-            .flow-container,
-            .reasons-container,
-            .three-reasons-container {
-                padding: 0 20px;
-            }
-            
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- ヘッダー -->
     <header>
-        <div class="header-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">🍀</div>
-                <div class="logo-text">よつばオンラインメディカル</div>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#">診療内容</a></li>
-                    <li><a href="#">オンライン診療</a></li>
-                    <li><a href="#">クリニック一覧</a></li>
-                    <li><a href="#">当院について</a></li>
-                    <li><a href="#">コラム</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <a href="#" class="btn-appointment">
-                    <span>📱</span>
-                    <span>診療予約</span>
-                </a>
-            </div>
+      <div class="header-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">🍀</div>
+          <div class="logo-text">よつばオンラインメディカル</div>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#">診療内容</a></li>
+            <li><a href="#">オンライン診療</a></li>
+            <li><a href="#">クリニック一覧</a></li>
+            <li><a href="#">当院について</a></li>
+            <li><a href="#">コラム</a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="#" class="btn-appointment">
+            <span>📱</span>
+            <span>診療予約</span>
+          </a>
         </div>
+      </div>
     </header>
 
     <!-- ヒーローセクション -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-left">
-                人物写真スペース
+      <div class="hero-content">
+        <div class="hero-left">人物写真スペース</div>
+        <div class="hero-right">
+          <div class="hero-top-text">
+            ＼ オーストラリアにいらっしゃる日本人の皆様へ／<br />PC・スマホで完結する病院受診を提供します
+          </div>
+          <h1>オンライン診療</h1>
+          <div class="hero-features">
+            <div class="feature-card">
+              <div class="feature-icon">📱</div>
+              <div class="feature-text">国内最安値を追求</div>
             </div>
-            <div class="hero-right">
-                <div class="hero-top-text">＼ スムーズな診察！PC・スマホで完結・簡単 ／</div>
-                <h1>オンライン診療</h1>
-                <div class="hero-features">
-                    <div class="feature-card">
-                        <div class="feature-icon">📱</div>
-                        <div class="feature-text">国内最安値を追求</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🚚</div>
-                        <div class="feature-text">薬は最短当日発送<br>翌日到着</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⏰</div>
-                        <div class="feature-text">平日7-24時まで<br>土日も診療</div>
-                    </div>
-                </div>
-                <div class="hero-bottom-text">～ 初診からオンラインで薬の処方可能 ～</div>
+            <div class="feature-card">
+              <div class="feature-icon">🚚</div>
+              <div class="feature-text">薬は最短当日発送<br />翌日到着</div>
             </div>
+            <div class="feature-card">
+              <div class="feature-icon">⏰</div>
+              <div class="feature-text">平日7-24時まで<br />土日も診療</div>
+            </div>
+          </div>
+          <div class="hero-bottom-text">～ 初診からオンラインで薬の処方可能 ～</div>
         </div>
+      </div>
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
-        <a href="#">ホーム</a> &gt; オンライン診療
-    </div>
+    <div class="breadcrumb"><a href="#">ホーム</a> &gt; オンライン診療</div>
 
     <!-- 診療メニューセクション -->
     <section class="menu-section">
-        <div class="menu-section-container">
-            <h2 class="section-title">オンライン診療のメニュー</h2>
-            <div class="menu-grid">
-                <a href="#" class="menu-item">一般内科</a>
-                <a href="#" class="menu-item">呼吸器科</a>
-                <a href="#" class="menu-item">循環器科</a>
-                <a href="#" class="menu-item">小児科</a>
-                <a href="#" class="menu-item">外科</a>
-                <a href="#" class="menu-item">皮膚科</a>
-                <a href="#" class="menu-item">耳鼻科</a>
-                <a href="#" class="menu-item">眼科</a>
-                <a href="#" class="menu-item">婦人科</a>
-                <a href="#" class="menu-item">心療内科</a>
-                <a href="#" class="menu-item">その他専門科</a>
-                <a href="#" class="menu-item">健康診断</a>
-                <a href="#" class="menu-item">医療通訳<br>サポート</a>
-                <a href="#" class="menu-item">処方薬配送</a>
-                <a href="#" class="menu-item">保険請求<br>サポート</a>
-                <a href="#" class="menu-item">緊急対応</a>
-            </div>
+      <div class="menu-section-container">
+        <h2 class="section-title">オンライン診療のメニュー</h2>
+        <div class="menu-grid">
+          <a href="#" class="menu-item">一般内科</a>
+          <a href="#" class="menu-item">呼吸器科</a>
+          <a href="#" class="menu-item">循環器科</a>
+          <a href="#" class="menu-item">小児科</a>
+          <a href="#" class="menu-item">外科</a>
+          <a href="#" class="menu-item">皮膚科</a>
+          <a href="#" class="menu-item">耳鼻科</a>
+          <a href="#" class="menu-item">眼科</a>
+          <a href="#" class="menu-item">婦人科</a>
+          <a href="#" class="menu-item">心療内科</a>
+          <a href="#" class="menu-item">その他専門科</a>
+          <a href="#" class="menu-item">健康診断</a>
+          <a href="#" class="menu-item">医療通訳<br />サポート</a>
+          <a href="#" class="menu-item">処方薬配送</a>
+          <a href="#" class="menu-item">保険請求<br />サポート</a>
+          <a href="#" class="menu-item">緊急対応</a>
         </div>
+      </div>
     </section>
 
     <!-- よつばジャパンクリニックのオンライン診療 -->
     <section class="intro-section">
-        <div class="intro-container">
-            <h1 class="intro-title">よつばジャパンクリニックのオン<br>ライン診療</h1>
-            <p class="intro-description">
-                スマートフォンやタブレットで、病院の予約から決済までかんたん！<br>
-                ご自宅や外出先で診療でき、待ち時間も短縮。お薬はご自宅にお届けします。<br>
-                オンライン診療なら、院内感染・二次感染のリスクもなく安心です。
-            </p>
-        </div>
+      <div class="intro-container">
+        <h1 class="intro-title">よつばジャパンクリニックのオン<br />ライン診療</h1>
+        <p class="intro-description">
+          スマートフォンやタブレットで、病院の予約から決済までかんたん！<br />
+          ご自宅や外出先で診療でき、待ち時間も短縮。お薬はご自宅にお届けします。<br />
+          オンライン診療なら、院内感染・二次感染のリスクもなく安心です。
+        </p>
+      </div>
     </section>
-    
 
     <!-- 診療の流れ -->
     <section class="flow-section">
-        <div class="flow-container">
-            <div class="flow-header">
-                <h2>初めての方でも簡単！オンライン診療の流れ</h2>
-            </div>
-            
-            <div class="flow-steps">
-                <div class="flow-step">
-                    <div class="step-header">
-                        <div class="step-number">STEP01</div>
-                        <div class="step-title-wrapper">
-                            <div class="step-title">日時をカレンダーから予約</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-text">
-                            <div class="step-subtitle">簡単予約！</div>
-                            <div class="step-description">
-                                カレンダーからお好きな日時をタップして予約
-                            </div>
-                        </div>
-                        <div class="step-image">📅</div>
-                    </div>
-                </div>
-                
-                <div class="flow-step">
-                    <div class="step-header">
-                        <div class="step-number">STEP02</div>
-                        <div class="step-title-wrapper">
-                            <div class="step-title">問診に回答し医師と診察</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-text">
-                            <div class="step-subtitle">スムーズな診察！</div>
-                            <div class="step-description">
-                                カメラ、マイク付きのスマホ、パソコンで
-                            </div>
-                        </div>
-                        <div class="step-image">💬</div>
-                    </div>
-                </div>
-                
-                <div class="flow-step">
-                    <div class="step-header">
-                        <div class="step-number">STEP03</div>
-                        <div class="step-title-wrapper">
-                            <div class="step-title">お薬は、最短翌日<br>ご自宅のポストにお届け</div>
-                        </div>
-                    </div>
-                    <div class="step-content">
-                        <div class="step-text">
-                            <div class="step-subtitle">最短翌日到着！</div>
-                            <div class="step-description">
-                                お支払いはクレジットカード、Paidy、Amazon pay、GMO後払い※、代引きで<br>
-                                <small style="font-size: 10px;">※お薬到着後コンビニ・銀行でお支払いをいただけます</small>
-                            </div>
-                        </div>
-                        <div class="step-image">📦</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="faq-link">
-                オンライン診療のよくあるご質問は<a href="#">こちら</a>
-            </div>
+      <div class="flow-container">
+        <div class="flow-header">
+          <h2>初めての方でも簡単！オンライン診療の流れ</h2>
         </div>
+
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-header">
+              <div class="step-number">STEP01</div>
+              <div class="step-title-wrapper">
+                <div class="step-title">日時をカレンダーから予約</div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-text">
+                <div class="step-subtitle">簡単予約！</div>
+                <div class="step-description">カレンダーからお好きな日時をタップして予約</div>
+              </div>
+              <div class="step-image">📅</div>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="step-header">
+              <div class="step-number">STEP02</div>
+              <div class="step-title-wrapper">
+                <div class="step-title">問診に回答し医師と診察</div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-text">
+                <div class="step-subtitle">スムーズな診察！</div>
+                <div class="step-description">カメラ、マイク付きのスマホ、パソコンで</div>
+              </div>
+              <div class="step-image">💬</div>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="step-header">
+              <div class="step-number">STEP03</div>
+              <div class="step-title-wrapper">
+                <div class="step-title">お薬は、最短翌日<br />ご自宅のポストにお届け</div>
+              </div>
+            </div>
+            <div class="step-content">
+              <div class="step-text">
+                <div class="step-subtitle">最短翌日到着！</div>
+                <div class="step-description">
+                  お支払いはクレジットカード、Paidy、Amazon pay、GMO後払い※、代引きで<br />
+                  <small style="font-size: 10px">※お薬到着後コンビニ・銀行でお支払いをいただけます</small>
+                </div>
+              </div>
+              <div class="step-image">📦</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-link">オンライン診療のよくあるご質問は<a href="#">こちら</a></div>
+      </div>
     </section>
 
     <!-- 選ばれる理由セクション -->
     <section class="reasons-section">
-        <div class="reasons-container">
-            <h2 class="main-section-title">よつばジャパンクリニックが選ばれる理由</h2>
-            <div class="reasons-grid-display">
-                <div class="reason-display-item">
-                    <div class="reason-icon-wrapper">
-                        <div class="reason-icon">📅</div>
-                    </div>
-                    <div class="reason-title">予約が直ぐとれる</div>
-                    <div class="reason-description"></div>
-                </div>
-                <div class="reason-display-item">
-                    <div class="reason-icon-wrapper">
-                        <div class="reason-icon">⏰</div>
-                    </div>
-                    <div class="reason-title">診察を直ぐに受けられる</div>
-                    <div class="reason-description"></div>
-                </div>
-                <div class="reason-display-item">
-                    <div class="reason-icon-wrapper">
-                        <div class="reason-icon">🔒</div>
-                    </div>
-                    <div class="reason-title">海外旅行保険適用</div>
-                    <div class="reason-description"></div>
-                </div>
+      <div class="reasons-container">
+        <h2 class="main-section-title">よつばジャパンクリニックが選ばれる理由</h2>
+        <div class="reasons-grid-display">
+          <div class="reason-display-item">
+            <div class="reason-icon-wrapper">
+              <div class="reason-icon">📅</div>
             </div>
+            <div class="reason-title">予約が直ぐとれる</div>
+            <div class="reason-description"></div>
+          </div>
+          <div class="reason-display-item">
+            <div class="reason-icon-wrapper">
+              <div class="reason-icon">⏰</div>
+            </div>
+            <div class="reason-title">診察を直ぐに受けられる</div>
+            <div class="reason-description"></div>
+          </div>
+          <div class="reason-display-item">
+            <div class="reason-icon-wrapper">
+              <div class="reason-icon">🔒</div>
+            </div>
+            <div class="reason-title">海外旅行保険適用</div>
+            <div class="reason-description"></div>
+          </div>
         </div>
+      </div>
     </section>
-
 
     <!-- 診療メニュー再掲載 -->
     <section class="bottom-menu-section">
-        <div class="bottom-menu-container">
-            <h2 class="bottom-menu-title">オンライン診療のメニュー</h2>
-            <div class="bottom-menu-grid">
-                <a href="#" class="bottom-menu-item">低用量ピル</a>
-                <a href="#" class="bottom-menu-item">月経移動</a>
-                <a href="#" class="bottom-menu-item">美容皮膚</a>
-                <a href="#" class="bottom-menu-item">ニキビ治療</a>
-                <a href="#" class="bottom-menu-item">女性AGA</a>
-                <a href="#" class="bottom-menu-item">アフターピル</a>
-                <a href="#" class="bottom-menu-item">男性AGA</a>
-                <a href="#" class="bottom-menu-item">ED・早漏防止</a>
-                <a href="#" class="bottom-menu-item">インフルエンザ<br>予防内服薬</a>
-                <a href="#" class="bottom-menu-item">女性肥満症治療</a>
-                <a href="#" class="bottom-menu-item">男性肥満症治療</a>
-                <a href="#" class="bottom-menu-item">禁煙治療</a>
-                <a href="#" class="bottom-menu-item">花粉症・舌下免疫<br>（保険診療）</a>
-                <a href="#" class="bottom-menu-item">性感染症治療</a>
-                <a href="#" class="bottom-menu-item">漢方</a>
-                <a href="#" class="bottom-menu-item">ドライアイ</a>
-                <a href="#" class="bottom-menu-item">トラベル診療</a>
-                <a href="#" class="bottom-menu-item">アレルギー性結膜炎<br>（保険診療）</a>
-                <a href="#" class="bottom-menu-item">高血圧</a>
-                <a href="#" class="bottom-menu-item">脂質異常症<br>（高脂血症）</a>
-                <a href="#" class="bottom-menu-item">高尿酸血症<br>（痛風発作）</a>
-                <a href="#" class="bottom-menu-item">いびき・睡眠時無呼吸<br>（SAS）</a>
-                <a href="#" class="bottom-menu-item">内科・皮膚科・<br>アレルギー科<br>（保険診療）</a>
-            </div>
+      <div class="bottom-menu-container">
+        <h2 class="bottom-menu-title">オンライン診療のメニュー</h2>
+        <div class="bottom-menu-grid">
+          <a href="#" class="bottom-menu-item">低用量ピル</a>
+          <a href="#" class="bottom-menu-item">月経移動</a>
+          <a href="#" class="bottom-menu-item">美容皮膚</a>
+          <a href="#" class="bottom-menu-item">ニキビ治療</a>
+          <a href="#" class="bottom-menu-item">女性AGA</a>
+          <a href="#" class="bottom-menu-item">アフターピル</a>
+          <a href="#" class="bottom-menu-item">男性AGA</a>
+          <a href="#" class="bottom-menu-item">ED・早漏防止</a>
+          <a href="#" class="bottom-menu-item">インフルエンザ<br />予防内服薬</a>
+          <a href="#" class="bottom-menu-item">女性肥満症治療</a>
+          <a href="#" class="bottom-menu-item">男性肥満症治療</a>
+          <a href="#" class="bottom-menu-item">禁煙治療</a>
+          <a href="#" class="bottom-menu-item">花粉症・舌下免疫<br />（保険診療）</a>
+          <a href="#" class="bottom-menu-item">性感染症治療</a>
+          <a href="#" class="bottom-menu-item">漢方</a>
+          <a href="#" class="bottom-menu-item">ドライアイ</a>
+          <a href="#" class="bottom-menu-item">トラベル診療</a>
+          <a href="#" class="bottom-menu-item">アレルギー性結膜炎<br />（保険診療）</a>
+          <a href="#" class="bottom-menu-item">高血圧</a>
+          <a href="#" class="bottom-menu-item">脂質異常症<br />（高脂血症）</a>
+          <a href="#" class="bottom-menu-item">高尿酸血症<br />（痛風発作）</a>
+          <a href="#" class="bottom-menu-item">いびき・睡眠時無呼吸<br />（SAS）</a>
+          <a href="#" class="bottom-menu-item">内科・皮膚科・<br />アレルギー科<br />（保険診療）</a>
         </div>
+      </div>
     </section>
 
     <!-- オンライン診療とは -->
     <section class="online-about-section">
-        <div class="online-about-container">
-            <div class="online-about-grid">
-                <div class="online-about-item">
-                    <div class="online-about-header">
-                        <div class="section-red-marker"></div>
-                        <h2>オンライン診療<br>とは</h2>
-                        <span class="section-label">ABOUT</span>
-                    </div>
-                    <div class="online-about-text">
-                        <p>オンライン診療とは、<strong>PCやスマートフォン・タブレット</strong>などで、病院の予約から決済までをインターネット上で行う診察・治療方法です。</p>
-                        <p>対面診療を原則としつつ、仕事などで忙しく、クリニックなど医療機関が開いている時間に受診することができないという方にとくに利用されています。</p>
-                    </div>
-                </div>
-                
-                <div class="online-about-item">
-                    <div class="online-about-header">
-                        <div class="section-red-marker"></div>
-                        <h2>オンライン診療<br>のメリット</h2>
-                        <span class="section-label">PROS</span>
-                    </div>
-                    <div class="online-about-text">
-                        <div class="merit-item">
-                            <h3>自宅やオフィスなどお好きな場所で診察を受けられる</h3>
-                            <p>インターネット環境とスマホやPCなどのデバイスさえあれば、自宅やオフィスなどお好きな場所から受診することが可能です。</p>
-                        </div>
-                        
-                        <div class="merit-item">
-                            <h3>院内感染・二次感染のリスクがない</h3>
-                            <p>新型コロナウイルスが流行している今の時期、とくに皆さんにとって避けたいのが院内感染のリスクだと思います。</p>
-                            <p>クリニックフォアのオンライン診療ならクリニックに行く必要がないのでそのリスクがございません。</p>
-                        </div>
-                        
-                        <div class="merit-item">
-                            <h3>薬や処方箋がご自宅に届く</h3>
-                            <p>こちらも、今の時期、非常に大切なことですが、院内での薬の処方や薬局などでの処方箋の用意を待つ必要がありません。</p>
-                            <p><strong>ご自宅などのお好きな場所に、お薬が届きます</strong>ので、自宅で行動を自粛されている間でも安心して受診いただけます。</p>
-                        </div>
-                        
-                        <div class="merit-item">
-                            <h3>スキマ時間で診察を受けられる</h3>
-                            <p>病院に行って受付をして待つ、ということが不要になりますので、<strong>仕事やプライベートなどの合間のスキマ時間で気軽に診察を受けることが可能です。</strong></p>
-                        </div>
-                        
-                        <div class="merit-item">
-                            <h3>アプリなどのダウンロードが不要なので簡単</h3>
-                            <p>クリニックフォアのシステムでは、患者様にオンライン診療用に新しくアプリをダウンロードしていただくといったことは行っておりません。</p>
-                            <p>だからこそ、受けたいときにすぐに簡単に受心して受診いただけます。</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="online-about-container">
+        <div class="online-about-grid">
+          <div class="online-about-item">
+            <div class="online-about-header">
+              <div class="section-red-marker"></div>
+              <h2>オンライン診療<br />とは</h2>
+              <span class="section-label">ABOUT</span>
             </div>
-            
-            <div class="online-about-footer">
-                <h3>こんな人におすすめ</h3>
-                <span class="footer-label">FOR YOU</span>
-                <div class="recommend-box">
-                    <ul>
-                        <li>仕事などが忙しく、クリニックに行く時間がない</li>
-                        <li>スキマ時間を有効活用したい</li>
-                        <li>クリニック・薬局などの待ち時間が嫌</li>
-                        <li>コロナなどで、なるべくクリニックに行きたくない</li>
-                        <li>薬をすぐに処方してもらいたい</li>
-                        <li>費用をおさえつつ、安心・安全も大事</li>
-                    </ul>
-                </div>
+            <div class="online-about-text">
+              <p>
+                オンライン診療とは、<strong>PCやスマートフォン・タブレット</strong>などで、病院の予約から決済までをインターネット上で行う診察・治療方法です。
+              </p>
+              <p>
+                対面診療を原則としつつ、仕事などで忙しく、クリニックなど医療機関が開いている時間に受診することができないという方にとくに利用されています。
+              </p>
             </div>
+          </div>
+
+          <div class="online-about-item">
+            <div class="online-about-header">
+              <div class="section-red-marker"></div>
+              <h2>オンライン診療<br />のメリット</h2>
+              <span class="section-label">PROS</span>
+            </div>
+            <div class="online-about-text">
+              <div class="merit-item">
+                <h3>自宅やオフィスなどお好きな場所で診察を受けられる</h3>
+                <p>
+                  インターネット環境とスマホやPCなどのデバイスさえあれば、自宅やオフィスなどお好きな場所から受診することが可能です。
+                </p>
+              </div>
+
+              <div class="merit-item">
+                <h3>院内感染・二次感染のリスクがない</h3>
+                <p>
+                  新型コロナウイルスが流行している今の時期、とくに皆さんにとって避けたいのが院内感染のリスクだと思います。
+                </p>
+                <p>クリニックフォアのオンライン診療ならクリニックに行く必要がないのでそのリスクがございません。</p>
+              </div>
+
+              <div class="merit-item">
+                <h3>薬や処方箋がご自宅に届く</h3>
+                <p>
+                  こちらも、今の時期、非常に大切なことですが、院内での薬の処方や薬局などでの処方箋の用意を待つ必要がありません。
+                </p>
+                <p>
+                  <strong>ご自宅などのお好きな場所に、お薬が届きます</strong
+                  >ので、自宅で行動を自粛されている間でも安心して受診いただけます。
+                </p>
+              </div>
+
+              <div class="merit-item">
+                <h3>スキマ時間で診察を受けられる</h3>
+                <p>
+                  病院に行って受付をして待つ、ということが不要になりますので、<strong
+                    >仕事やプライベートなどの合間のスキマ時間で気軽に診察を受けることが可能です。</strong
+                  >
+                </p>
+              </div>
+
+              <div class="merit-item">
+                <h3>アプリなどのダウンロードが不要なので簡単</h3>
+                <p>
+                  クリニックフォアのシステムでは、患者様にオンライン診療用に新しくアプリをダウンロードしていただくといったことは行っておりません。
+                </p>
+                <p>だからこそ、受けたいときにすぐに簡単に受心して受診いただけます。</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="online-about-footer">
+          <h3>こんな人におすすめ</h3>
+          <span class="footer-label">FOR YOU</span>
+          <div class="recommend-box">
+            <ul>
+              <li>仕事などが忙しく、クリニックに行く時間がない</li>
+              <li>スキマ時間を有効活用したい</li>
+              <li>クリニック・薬局などの待ち時間が嫌</li>
+              <li>コロナなどで、なるべくクリニックに行きたくない</li>
+              <li>薬をすぐに処方してもらいたい</li>
+              <li>費用をおさえつつ、安心・安全も大事</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- フッター -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>診療メニュー</h3>
-                <h4>オンライン診療</h4>
-                <ul>
-                    <li><a href="#">一般内科</a></li>
-                    <li><a href="#">呼吸器科</a></li>
-                    <li><a href="#">循環器科</a></li>
-                    <li><a href="#">小児科</a></li>
-                    <li><a href="#">外科</a></li>
-                    <li><a href="#">皮膚科</a></li>
-                    <li><a href="#">耳鼻科</a></li>
-                    <li><a href="#">眼科</a></li>
-                    <li><a href="#">婦人科</a></li>
-                    <li><a href="#">心療内科</a></li>
-                    <li><a href="#">その他専門科</a></li>
-                    <li><a href="#">健康診断</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>オンライン検査</h3>
-                <ul>
-                    <li><a href="#">血液検査</a></li>
-                    <li><a href="#">HPV検査</a></li>
-                    <li><a href="#">性感染症検査</a></li>
-                    <li><a href="#">AGAリスク検査</a></li>
-                    <li><a href="#">男性ホルモン検査</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>対面診療</h3>
-                <h4>オーストラリア</h4>
-                <ul>
-                    <li><a href="#">シドニー</a></li>
-                    <li><a href="#">メルボルン</a></li>
-                    <li><a href="#">ブリスベン</a></li>
-                    <li><a href="#">パース</a></li>
-                    <li><a href="#">アデレード</a></li>
-                    <li><a href="#">キャンベラ</a></li>
-                    <li><a href="#">ゴールドコースト</a></li>
-                    <li><a href="#">ケアンズ</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>YOTSUBA JAPAN CLINIC</h3>
-                <p style="font-size: 14px; color: #95a5a6; margin-bottom: 20px;">
-                    運営元：医療法人社団エムズ<br>
-                    1F, Emaar The Palm Spring Plaza,<br>
-                    Unit No. 007, Sector 53,<br>
-                    Gurugram, Haryana 122002
-                </p>
-                <p style="margin-bottom: 20px;">
-                    <a href="#">利用規約・特定商取引法に基づく表記</a>
-                </p>
-                <p>FOLLOW US</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">X</a>
-                    <a href="#" class="social-link">Y</a>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>診療メニュー</h3>
+          <h4>オンライン診療</h4>
+          <ul>
+            <li><a href="#">一般内科</a></li>
+            <li><a href="#">呼吸器科</a></li>
+            <li><a href="#">循環器科</a></li>
+            <li><a href="#">小児科</a></li>
+            <li><a href="#">外科</a></li>
+            <li><a href="#">皮膚科</a></li>
+            <li><a href="#">耳鼻科</a></li>
+            <li><a href="#">眼科</a></li>
+            <li><a href="#">婦人科</a></li>
+            <li><a href="#">心療内科</a></li>
+            <li><a href="#">その他専門科</a></li>
+            <li><a href="#">健康診断</a></li>
+          </ul>
         </div>
-        <div class="footer-bottom">
-            <p>©︎2025 インドよつばオンラインメディカル All Rights Reserved.</p>
-        </div>
-    </footer>
 
+        <div class="footer-section">
+          <h3>オンライン検査</h3>
+          <ul>
+            <li><a href="#">血液検査</a></li>
+            <li><a href="#">HPV検査</a></li>
+            <li><a href="#">性感染症検査</a></li>
+            <li><a href="#">AGAリスク検査</a></li>
+            <li><a href="#">男性ホルモン検査</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>対面診療</h3>
+          <h4>オーストラリア</h4>
+          <ul>
+            <li><a href="#">シドニー</a></li>
+            <li><a href="#">メルボルン</a></li>
+            <li><a href="#">ブリスベン</a></li>
+            <li><a href="#">パース</a></li>
+            <li><a href="#">アデレード</a></li>
+            <li><a href="#">キャンベラ</a></li>
+            <li><a href="#">ゴールドコースト</a></li>
+            <li><a href="#">ケアンズ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>YOTSUBA JAPAN CLINIC</h3>
+          <p style="font-size: 14px; color: #95a5a6; margin-bottom: 20px">
+            運営元：医療法人社団エムズ<br />
+            1F, Emaar The Palm Spring Plaza,<br />
+            Unit No. 007, Sector 53,<br />
+            Gurugram, Haryana 122002
+          </p>
+          <p style="margin-bottom: 20px">
+            <a href="#">利用規約・特定商取引法に基づく表記</a>
+          </p>
+          <p>FOLLOW US</p>
+          <div class="social-links">
+            <a href="#" class="social-link">X</a>
+            <a href="#" class="social-link">Y</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>©︎2025 インドよつばオンラインメディカル All Rights Reserved.</p>
+      </div>
+    </footer>
 
     <!-- PAGE TOPボタン -->
     <a href="#" class="page-top">PAGE TOP</a>
-</body>
+  </body>
 </html>
