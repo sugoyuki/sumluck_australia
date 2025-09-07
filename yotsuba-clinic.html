@@ -289,26 +289,40 @@
         background: rgba(255, 255, 255, 0.95);
         border: none;
         border-radius: 12px;
-        padding: 25px 15px;
-        text-align: center;
+        padding: 20px 15px;
+        text-align: left;
         text-decoration: none;
-        color: #059669;
-        font-weight: 600;
-        font-size: 15px;
         transition: all 0.3s;
         cursor: pointer;
-        min-height: 90px;
+        min-height: 100px;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
+      }
+
+      .menu-item-title {
+        color: #059669;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      .menu-item-desc {
+        color: #666;
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: normal;
       }
 
       .menu-item:hover {
         background: white;
         transform: translateY(-4px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .menu-item:hover .menu-item-title {
         color: #10b981;
       }
 
@@ -1066,18 +1080,54 @@
       <div class="menu-section-container">
         <h2 class="section-title">オンライン診療のメニュー</h2>
         <div class="menu-grid">
-          <a href="#" class="menu-item">一般内科</a>
-          <a href="#" class="menu-item">呼吸器科</a>
-          <a href="#" class="menu-item">循環器科</a>
-          <a href="#" class="menu-item">小児科</a>
-          <a href="#" class="menu-item">外科</a>
-          <a href="#" class="menu-item">皮膚科</a>
-          <a href="#" class="menu-item">耳鼻科</a>
-          <a href="#" class="menu-item">眼科</a>
-          <a href="#" class="menu-item">婦人科</a>
-          <a href="#" class="menu-item">心療内科</a>
-          <a href="#" class="menu-item">その他専門科</a>
-          <a href="#" class="menu-item">健康診断</a>
+          <div class="menu-item">
+            <div class="menu-item-title">一般内科</div>
+            <div class="menu-item-desc">風邪、インフルエンザ、食中毒、下痢、腹痛、頭痛など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">呼吸器科</div>
+            <div class="menu-item-desc">喘息、気管支炎、肺炎、結核など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">循環器科</div>
+            <div class="menu-item-desc">高血圧、不整脈、心臓病など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">小児科</div>
+            <div class="menu-item-desc">お子様の体調不良、予防接種、発育相談</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">外科</div>
+            <div class="menu-item-desc">怪我、切り傷、やけど、ねんざなど</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">皮膚科</div>
+            <div class="menu-item-desc">にきび、湿疹、じんましんなど</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">耳鼻科</div>
+            <div class="menu-item-desc">耳、鼻、のどの疾患、アレルギー性鼻炎や花粉症など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">眼科</div>
+            <div class="menu-item-desc">ものもらい、結膜炎、眼精疲労など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">婦人科</div>
+            <div class="menu-item-desc">女性医師・女性スタッフが対応します</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">心療内科</div>
+            <div class="menu-item-desc">不眠、不安症状、抑うつ症状、ストレス関連疾患など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">その他専門科</div>
+            <div class="menu-item-desc">循環器科、消化器科、整形外科、泌尿器科など</div>
+          </div>
+          <div class="menu-item">
+            <div class="menu-item-title">健康診断</div>
+            <div class="menu-item-desc">予約代行可能です。健診レポートをオプションで日本語訳も可能です。</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1088,7 +1138,7 @@
         <h1 class="intro-title">よつばオンラインメディカルのオン<br />ライン診療</h1>
         <p class="intro-description">
           スマートフォンやタブレットで、病院の予約から決済までかんたん！<br />
-          ご自宅や外出先で診療でき、待ち時間も短縮。お薬はご自宅にお届けします。<br />
+          ご自宅や外出先で診療でき、待ち時間も短縮。<br />
           オンライン診療なら、院内感染・二次感染のリスクもなく安心です。
         </p>
       </div>
