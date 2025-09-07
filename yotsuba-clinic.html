@@ -888,6 +888,125 @@
         }
       }
 
+      /* よくあるご質問 */
+      .faq-section {
+        background: #f9fafb;
+        padding: 80px 0;
+      }
+
+      .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+
+      .faq-title {
+        font-size: 34px;
+        color: #10b981;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: bold;
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .faq-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 20px 25px;
+        background: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        font-size: 16px;
+        color: #333;
+        font-weight: 500;
+        transition: background 0.3s;
+      }
+
+      .faq-question:hover {
+        background: #f9fafb;
+      }
+
+      .faq-question.active {
+        background: #ecfdf5;
+        color: #10b981;
+      }
+
+      .faq-toggle {
+        font-size: 24px;
+        font-weight: 300;
+        color: #10b981;
+        transition: transform 0.3s;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      .faq-toggle.active {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        background: #f9fafb;
+      }
+
+      .faq-answer.active {
+        max-height: 300px;
+        padding: 20px 25px;
+        transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+      }
+
+      .faq-answer p {
+        font-size: 15px;
+        color: #666;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .faq-container {
+          padding: 0 20px;
+        }
+
+        .faq-title {
+          font-size: 28px;
+        }
+
+        .faq-question {
+          padding: 15px 20px;
+          font-size: 15px;
+        }
+
+        .faq-answer.active {
+          padding: 15px 20px;
+        }
+      }
+
       /* フッター */
       footer {
         background: #2c3e50;
@@ -1536,6 +1655,84 @@
       </div>
     </section>
 
+    <!-- よくあるご質問 -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <h2 class="faq-title">よくあるご質問</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(1)">
+              <span>子どもの診察も可能ですか？また、何歳から診てもらえますか？</span>
+              <span class="faq-toggle" id="faq-toggle-1">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-1">
+              <p>乳児（0歳児）から診察可能です。症状によって対応できない場合は対応可能な病院でご受診いただけるよう、紹介状を発行致します。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(2)">
+              <span>会社や学校に提出するための診断書は発行してもらえますか？</span>
+              <span class="faq-toggle" id="faq-toggle-2">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-2">
+              <p>発行可能です。詳しくはお問い合わせください。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(3)">
+              <span>オンライン診療の結果、詳しい検査や対面での診察が必要になった場合はどうなりますか？</span>
+              <span class="faq-toggle" id="faq-toggle-3">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-3">
+              <p>血液検査など検査員がご自宅へ訪問し検査できるケースと、対応可能な医療機関へご受診頂くケースがございます。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(4)">
+              <span>身体の不調ではなく、気分の落ち込みや海外生活の悩みといったメンタル面の相談もできますか？</span>
+              <span class="faq-toggle" id="faq-toggle-4">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-4">
+              <p>日本人医師の精神科医/心療内科医によるオンライン通訳が可能です。言葉や文化のストレスを感じず、安心して日本語でご相談いただけます。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(5)">
+              <span>薬はどうやって受け取れますか？</span>
+              <span class="faq-toggle" id="faq-toggle-5">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-5">
+              <p>発行された処方箋を元に最寄りの薬局で薬を購入することができます。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(6)">
+              <span>日本の海外旅行保険は対象になりますか？対象の場合立替が必要ですか？</span>
+              <span class="faq-toggle" id="faq-toggle-6">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-6">
+              <p>症状や保険会社、付帯されてる内容によってお立替なく診察を受けられます。事前にお問い合わせ下さい。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFAQ(7)">
+              <span>支払はクレジットカードが使えますか？また他に支払手段ありますか？</span>
+              <span class="faq-toggle" id="faq-toggle-7">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-7">
+              <p>クレジットカード決済、銀行振込、PayPalなど各種決済方法に対応しております。詳しくはお問い合わせください。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- フッター -->
     <footer>
       <div class="footer-content">
@@ -1609,5 +1806,43 @@
 
     <!-- PAGE TOPボタン -->
     <a href="#" class="page-top">PAGE TOP</a>
+
+    <script>
+      let currentOpenFAQ = null;
+
+      function toggleFAQ(id) {
+        const answer = document.getElementById(`faq-answer-${id}`);
+        const toggle = document.getElementById(`faq-toggle-${id}`);
+        const question = answer.previousElementSibling;
+
+        // If clicking on already open FAQ, close it
+        if (currentOpenFAQ === id) {
+          answer.classList.remove('active');
+          toggle.classList.remove('active');
+          toggle.textContent = '+';
+          question.classList.remove('active');
+          currentOpenFAQ = null;
+          return;
+        }
+
+        // Close currently open FAQ if exists
+        if (currentOpenFAQ !== null) {
+          const prevAnswer = document.getElementById(`faq-answer-${currentOpenFAQ}`);
+          const prevToggle = document.getElementById(`faq-toggle-${currentOpenFAQ}`);
+          const prevQuestion = prevAnswer.previousElementSibling;
+          prevAnswer.classList.remove('active');
+          prevToggle.classList.remove('active');
+          prevToggle.textContent = '+';
+          prevQuestion.classList.remove('active');
+        }
+
+        // Open clicked FAQ
+        answer.classList.add('active');
+        toggle.classList.add('active');
+        toggle.textContent = '−';
+        question.classList.add('active');
+        currentOpenFAQ = id;
+      }
+    </script>
   </body>
 </html>
