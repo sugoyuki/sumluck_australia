@@ -105,7 +105,7 @@
         /* ヒーローセクション */
         .hero {
             background: #ecfdf5;
-            min-height: 500px;
+            min-height: 550px;
             position: relative;
             display: flex;
             align-items: center;
@@ -113,82 +113,99 @@
         }
         
         .hero-content {
-            max-width: 1440px;
+            max-width: 1400px;
             width: 100%;
             margin: 0 auto;
-            padding: 0 120px;
+            padding: 0 60px;
             display: flex;
             align-items: center;
             gap: 60px;
         }
         
         .hero-left {
-            flex: 0 0 300px;
+            flex: 0 0 350px;
             height: 400px;
-            background: #f0fdf4;
-            border-radius: 12px;
+            background: #f9fafb;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #10b981;
-            font-size: 18px;
-            border: 2px dashed #10b981;
-            opacity: 0.5;
+            color: #9ca3af;
+            font-size: 16px;
+            border: 2px dashed #d1d5db;
         }
         
         .hero-right {
             flex: 1;
+        }
+        
+        .hero-top-text {
+            color: #10b981;
+            font-size: 22px;
+            margin-bottom: 20px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 52px;
+            font-size: 72px;
             color: #10b981;
             margin-bottom: 50px;
             font-weight: bold;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-align: center;
         }
         
         .hero-features {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 45px;
         }
         
         .feature-card {
             background: white;
-            border: 2px solid #10b981;
+            border: 3px solid #10b981;
             border-radius: 16px;
-            padding: 30px;
-            width: 280px;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+            padding: 20px 35px;
+            min-width: 240px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 85px;
         }
         
         .feature-icon {
-            width: 80px;
-            height: 80px;
+            width: 64px;
+            height: 64px;
             background: #10b981;
             border-radius: 50%;
-            margin: 0 auto 20px;
+            position: absolute;
+            top: -32px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 36px;
+            font-size: 30px;
         }
         
         .feature-text {
             font-size: 18px;
             color: #333;
-            font-weight: 600;
+            font-weight: bold;
             line-height: 1.4;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .hero-bottom-text {
+            color: #10b981;
+            font-size: 22px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 20px;
         }
         
         /* パンくずリスト */
@@ -849,21 +866,23 @@
                 人物写真スペース
             </div>
             <div class="hero-right">
+                <div class="hero-top-text">＼ スムーズな診察！PC・スマホで完結・簡単 ／</div>
                 <h1>オンライン診療</h1>
                 <div class="hero-features">
                     <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text">国内最安値を追求</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <div class="feature-text">薬は最短当日発送<br>翌日到着</div>
+                    </div>
+                    <div class="feature-card">
                         <div class="feature-icon">⏰</div>
-                        <div class="feature-text">すぐに診療を<br>受けられる</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏥</div>
-                        <div class="feature-text">安心の通訳体制</div>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <div class="feature-text">海外旅行保険の<br>適用</div>
+                        <div class="feature-text">平日7-24時まで<br>土日も診療</div>
                     </div>
                 </div>
+                <div class="hero-bottom-text">～ 初診からオンラインで薬の処方可能 ～</div>
             </div>
         </div>
     </section>
