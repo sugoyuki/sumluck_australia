@@ -683,6 +683,163 @@
             line-height: 1.8;
         }
         
+        /* オンライン診療とは */
+        .online-about-section {
+            background: #f9fafb;
+            padding: 80px 0;
+        }
+        
+        .online-about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+        
+        .online-about-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .online-about-item {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .online-about-header {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        
+        .section-red-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #10b981;
+        }
+        
+        .online-about-header h2 {
+            font-size: 28px;
+            color: #333;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        
+        .section-label {
+            font-size: 14px;
+            color: #10b981;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .online-about-text {
+            padding-left: 20px;
+        }
+        
+        .online-about-text p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .online-about-text strong {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .merit-item {
+            background: #ecfdf5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .merit-item h3 {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .merit-item p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .online-about-footer {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .online-about-footer h3 {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .footer-label {
+            font-size: 14px;
+            color: #10b981;
+            font-weight: bold;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 30px;
+        }
+        
+        .recommend-box {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 30px;
+        }
+        
+        .recommend-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .recommend-box li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .recommend-box li:before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #10b981;
+        }
+        
+        @media (max-width: 768px) {
+            .online-about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .online-about-container {
+                padding: 0 20px;
+            }
+        }
+        
         /* フッター */
         footer {
             background: #2c3e50;
@@ -1093,6 +1250,77 @@
                 <a href="#" class="bottom-menu-item">高尿酸血症<br>（痛風発作）</a>
                 <a href="#" class="bottom-menu-item">いびき・睡眠時無呼吸<br>（SAS）</a>
                 <a href="#" class="bottom-menu-item">内科・皮膚科・<br>アレルギー科<br>（保険診療）</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- オンライン診療とは -->
+    <section class="online-about-section">
+        <div class="online-about-container">
+            <div class="online-about-grid">
+                <div class="online-about-item">
+                    <div class="online-about-header">
+                        <div class="section-red-marker"></div>
+                        <h2>オンライン診療<br>とは</h2>
+                        <span class="section-label">ABOUT</span>
+                    </div>
+                    <div class="online-about-text">
+                        <p>オンライン診療とは、<strong>PCやスマートフォン・タブレット</strong>などで、病院の予約から決済までをインターネット上で行う診察・治療方法です。</p>
+                        <p>対面診療を原則としつつ、仕事などで忙しく、クリニックなど医療機関が開いている時間に受診することができないという方にとくに利用されています。</p>
+                    </div>
+                </div>
+                
+                <div class="online-about-item">
+                    <div class="online-about-header">
+                        <div class="section-red-marker"></div>
+                        <h2>オンライン診療<br>のメリット</h2>
+                        <span class="section-label">PROS</span>
+                    </div>
+                    <div class="online-about-text">
+                        <div class="merit-item">
+                            <h3>自宅やオフィスなどお好きな場所で診察を受けられる</h3>
+                            <p>インターネット環境とスマホやPCなどのデバイスさえあれば、自宅やオフィスなどお好きな場所から受診することが可能です。</p>
+                        </div>
+                        
+                        <div class="merit-item">
+                            <h3>院内感染・二次感染のリスクがない</h3>
+                            <p>新型コロナウイルスが流行している今の時期、とくに皆さんにとって避けたいのが院内感染のリスクだと思います。</p>
+                            <p>クリニックフォアのオンライン診療ならクリニックに行く必要がないのでそのリスクがございません。</p>
+                        </div>
+                        
+                        <div class="merit-item">
+                            <h3>薬や処方箋がご自宅に届く</h3>
+                            <p>こちらも、今の時期、非常に大切なことですが、院内での薬の処方や薬局などでの処方箋の用意を待つ必要がありません。</p>
+                            <p><strong>ご自宅などのお好きな場所に、お薬が届きます</strong>ので、自宅で行動を自粛されている間でも安心して受診いただけます。</p>
+                        </div>
+                        
+                        <div class="merit-item">
+                            <h3>スキマ時間で診察を受けられる</h3>
+                            <p>病院に行って受付をして待つ、ということが不要になりますので、<strong>仕事やプライベートなどの合間のスキマ時間で気軽に診察を受けることが可能です。</strong></p>
+                        </div>
+                        
+                        <div class="merit-item">
+                            <h3>アプリなどのダウンロードが不要なので簡単</h3>
+                            <p>クリニックフォアのシステムでは、患者様にオンライン診療用に新しくアプリをダウンロードしていただくといったことは行っておりません。</p>
+                            <p>だからこそ、受けたいときにすぐに簡単に受心して受診いただけます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="online-about-footer">
+                <h3>こんな人におすすめ</h3>
+                <span class="footer-label">FOR YOU</span>
+                <div class="recommend-box">
+                    <ul>
+                        <li>仕事などが忙しく、クリニックに行く時間がない</li>
+                        <li>スキマ時間を有効活用したい</li>
+                        <li>クリニック・薬局などの待ち時間が嫌</li>
+                        <li>コロナなどで、なるべくクリニックに行きたくない</li>
+                        <li>薬をすぐに処方してもらいたい</li>
+                        <li>費用をおさえつつ、安心・安全も大事</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
