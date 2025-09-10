@@ -1302,99 +1302,125 @@
     </section>
 
     <!-- 診療の流れ -->
-    <section class="flow-section">
-      <div class="flow-container">
-        <div class="flow-header">
-          <h2>初めての方でも簡単！オンライン診療の流れ</h2>
+    <section style="padding: 80px 0; background: #ecfdf5;">
+      <div style="max-width: 900px; margin: 0 auto; padding: 0 60px;">
+        <h2 style="font-size: 34px; color: #10b981; text-align: center; margin-bottom: 60px;">
+          初めての方でも簡単！オンライン診療の流れ
+        </h2>
+        
+        <!-- 縦方向のステップレイアウト -->
+        <div style="display: flex; flex-direction: column; gap: 30px;">
+          <!-- STEP 1 -->
+          <div style="display: flex; align-items: flex-start; gap: 30px;">
+            <div style="background: #10b981; color: white; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0;">
+              <div>
+                <div style="font-size: 12px;">STEP</div>
+                <div style="font-size: 32px; font-weight: bold;">1</div>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 24px; color: #10b981; margin-bottom: 15px;">ご予約</h3>
+              <p style="color: #666; line-height: 1.8; font-size: 16px;">
+                お電話もしくはLINEでご予約いただけます
+              </p>
+            </div>
+          </div>
+
+          <!-- 矢印区切り -->
+          <div style="text-align: center; margin: -20px 0 -20px 45px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 5 L20 30 M12 22 L20 30 L28 22" stroke="#10b981" stroke-width="2" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+
+          <!-- STEP 2 -->
+          <div style="display: flex; align-items: flex-start; gap: 30px;">
+            <div style="background: #10b981; color: white; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0;">
+              <div>
+                <div style="font-size: 12px;">STEP</div>
+                <div style="font-size: 32px; font-weight: bold;">2</div>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 24px; color: #10b981; margin-bottom: 15px;">医師の決定</h3>
+              <p style="color: #666; line-height: 1.8; font-size: 16px;">
+                ご希望の日時を伺った上で症状から最適な医師を予約。<br>
+                医師の決定をその日時に合わせて通訳士をアサインします
+              </p>
+            </div>
+          </div>
+
+          <!-- 矢印区切り -->
+          <div style="text-align: center; margin: -20px 0 -20px 45px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 5 L20 30 M12 22 L20 30 L28 22" stroke="#10b981" stroke-width="2" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+
+          <!-- STEP 3 -->
+          <div style="display: flex; align-items: flex-start; gap: 30px;">
+            <div style="background: #10b981; color: white; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0;">
+              <div>
+                <div style="font-size: 12px;">STEP</div>
+                <div style="font-size: 32px; font-weight: bold;">3</div>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 24px; color: #10b981; margin-bottom: 15px;">オンライン診察</h3>
+              <p style="color: #666; line-height: 1.8; font-size: 16px;">
+                通訳士が立ち合いし、サポート致します
+              </p>
+            </div>
+          </div>
+
+          <!-- 矢印区切り -->
+          <div style="text-align: center; margin: -20px 0 -20px 45px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 5 L20 30 M12 22 L20 30 L28 22" stroke="#10b981" stroke-width="2" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+
+          <!-- STEP 4 -->
+          <div style="display: flex; align-items: flex-start; gap: 30px;">
+            <div style="background: #10b981; color: white; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0;">
+              <div>
+                <div style="font-size: 12px;">STEP</div>
+                <div style="font-size: 32px; font-weight: bold;">4</div>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 24px; color: #10b981; margin-bottom: 15px;">診察後</h3>
+              <p style="color: #666; line-height: 1.8; font-size: 16px;">
+                診察後は処方箋をお渡しし、<br>
+                費用精算と保険金請求のサポートをいたします
+              </p>
+            </div>
+          </div>
+
+          <!-- 矢印区切り -->
+          <div style="text-align: center; margin: -20px 0 -20px 45px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 5 L20 30 M12 22 L20 30 L28 22" stroke="#10b981" stroke-width="2" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+
+          <!-- STEP 5 -->
+          <div style="display: flex; align-items: flex-start; gap: 30px;">
+            <div style="background: #10b981; color: white; border-radius: 50%; width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0;">
+              <div>
+                <div style="font-size: 12px;">STEP</div>
+                <div style="font-size: 32px; font-weight: bold;">5</div>
+              </div>
+            </div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 24px; color: #10b981; margin-bottom: 15px;">お薬の受け取り</h3>
+              <p style="color: #666; line-height: 1.8; font-size: 16px;">
+                ご自身でお薬をご購入いただき、<br>
+                保険会社への費用請求をサポートします
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div class="flow-steps">
-          <div class="flow-step">
-            <div class="step-header">
-              <div class="step-number">STEP01</div>
-              <div class="step-title-wrapper">
-                <div class="step-title">ご予約</div>
-              </div>
-            </div>
-            <div class="step-content">
-              <div class="step-text">
-                <div class="step-subtitle"></div>
-                <div class="step-description">お電話もしくはLINEでご予約いただけます</div>
-              </div>
-              <div class="step-image">💬</div>
-            </div>
-          </div>
-
-          <div class="flow-step">
-            <div class="step-header">
-              <div class="step-number">STEP02</div>
-              <div class="step-title-wrapper">
-                <div class="step-title">医師の決定</div>
-              </div>
-            </div>
-            <div class="step-content">
-              <div class="step-text">
-                <div class="step-subtitle"></div>
-                <div class="step-description">
-                  ご希望の日時を伺った上で症状から最適な医師を予約。医師の決定をその日時に合わせて通訳士をアサインします
-                </div>
-              </div>
-              <div class="step-image">👨‍⚕️</div>
-            </div>
-          </div>
-
-          <div class="flow-step">
-            <div class="step-header">
-              <div class="step-number">STEP03</div>
-              <div class="step-title-wrapper">
-                <div class="step-title">オンライン診察</div>
-              </div>
-            </div>
-            <div class="step-content">
-              <div class="step-text">
-                <div class="step-subtitle"></div>
-                <div class="step-description">通訳士が立ち合いし、サポート致します</div>
-              </div>
-              <div class="step-image">📅</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flow-steps-row2">
-          <div class="flow-step">
-            <div class="step-header">
-              <div class="step-number">STEP04</div>
-              <div class="step-title-wrapper">
-                <div class="step-title">診察後</div>
-              </div>
-            </div>
-            <div class="step-content">
-              <div class="step-text">
-                <div class="step-subtitle"></div>
-                <div class="step-description">診察後は処方箋をお渡しし、費用精算と保険金請求のサポートをいたします</div>
-              </div>
-              <div class="step-image">💬</div>
-            </div>
-          </div>
-
-          <div class="flow-step">
-            <div class="step-header">
-              <div class="step-number">STEP05</div>
-              <div class="step-title-wrapper">
-                <div class="step-title">お薬の受け取り</div>
-              </div>
-            </div>
-            <div class="step-content">
-              <div class="step-text">
-                <div class="step-subtitle"></div>
-                <div class="step-description">ご自身でお薬をご購入いただき、保険会社への費用請求をサポートします</div>
-              </div>
-              <div class="step-image">💊</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-link">よくあるご質問は<a href="#">こちら</a></div>
       </div>
     </section>
 
