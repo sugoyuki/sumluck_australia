@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .container-max {
+    @apply max-w-7xl mx-auto px-8 md:px-16;
+  }
+  
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .green-primary {
+    color: #10b981;
+  }
+  
+  .bg-green-primary {
+    background-color: #10b981;
+  }
+  
+  .bg-green-secondary {
+    background-color: #059669;
+  }
+  
+  .bg-green-light {
+    background-color: #ecfdf5;
+  }
+}
