@@ -353,7 +353,7 @@
 
       /* よつばオンラインメディカルのオンライン診療 */
       .intro-section {
-        background: #fff;
+        background: #f9fafb;
         padding: 80px 0;
       }
 
@@ -365,11 +365,26 @@
       }
 
       .intro-title {
-        font-size: 42px;
+        font-size: 36px;
         color: #10b981;
-        margin-bottom: 25px;
+        margin-bottom: 50px;
         font-weight: bold;
         line-height: 1.3;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .intro-title::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: #10b981;
+        border-radius: 2px;
       }
 
       .intro-description {
@@ -562,9 +577,13 @@
         background: white;
         border: 2px solid #10b981;
         border-radius: 12px;
-        padding: 35px 25px;
+        padding: 40px 30px;
         text-align: center;
         transition: transform 0.3s, box-shadow 0.3s;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .reason-display-item:hover {
@@ -599,7 +618,8 @@
       .reason-description {
         font-size: 14px;
         color: #666;
-        line-height: 1.6;
+        line-height: 1.7;
+        margin-top: 8px;
       }
 
       /* 3つの理由 */
@@ -1291,15 +1311,63 @@
       </div>
     </section>
 
-    <!-- よつばオンラインメディカルのオンライン診療 -->
+    <!-- なぜオンライン診察？ -->
     <section class="intro-section">
       <div class="intro-container">
-        <h1 class="intro-title">よつばオンラインメディカルの<br />オンライン診療</h1>
-        <p class="intro-description">
-          スマートフォンやタブレットで、病院の予約から決済までかんたん！<br />
-          ご自宅や外出先で診療でき、待ち時間も短縮。<br />
-          院内感染・二次感染のリスクもなく安心です。
-        </p>
+        <h1 class="intro-title">なぜ対面診療ではなくオンライン診察？？</h1>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+          <!-- 移動や待ち時間が不要 -->
+          <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left: 4px solid #10b981;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <div style="width: 50px; height: 50px; background: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-home" style="color: #10b981; font-size: 22px;"></i>
+              </div>
+              <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">移動や待ち時間が不要</h3>
+            </div>
+            <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
+              病院に行かず、広いオーストラリアのどこからでもご自宅や滞在先から診療が可能。
+            </p>
+          </div>
+
+          <!-- 日本語通訳士が同席 -->
+          <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left: 4px solid #10b981;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <div style="width: 50px; height: 50px; background: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-language" style="color: #10b981; font-size: 22px;"></i>
+              </div>
+              <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">日本語通訳士が同席</h3>
+            </div>
+            <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
+              英語が不安でも安心して症状を伝えられ、医師の説明も理解できます。
+            </p>
+          </div>
+
+          <!-- すぐに相談できる安心感 -->
+          <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left: 4px solid #10b981;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <div style="width: 50px; height: 50px; background: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-clock" style="color: #10b981; font-size: 22px;"></i>
+              </div>
+              <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">すぐに相談できる安心感</h3>
+            </div>
+            <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
+              急な体調不良やお子様の発熱にも、待たずに医師と繋がれます。
+            </p>
+          </div>
+
+          <!-- 海外生活にフィット -->
+          <div style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-left: 4px solid #10b981;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+              <div style="width: 50px; height: 50px; background: #ecfdf5; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-globe" style="color: #10b981; font-size: 22px;"></i>
+              </div>
+              <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">海外生活にフィット</h3>
+            </div>
+            <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
+              ワーキングホリデー、留学、駐在、旅行など、あらゆる場面で日本で受診するのと同じくらいの安心感をお届けします。
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1309,7 +1377,7 @@
         <h2 style="font-size: 34px; color: #10b981; text-align: center; margin-bottom: 60px;">
           初めての方でも簡単！オンライン診療の流れ
         </h2>
-        
+
         <!-- 縦方向のステップレイアウト -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
           <!-- STEP 1 -->
@@ -1507,21 +1575,21 @@
               <div class="reason-icon"><i class="fas fa-calendar-alt"></i></div>
             </div>
             <div class="reason-title">予約が直ぐとれる</div>
-            <div class="reason-description"></div>
+            <div class="reason-description">面倒な手続きは不要。スマホやPCから簡単に予約でき、思い立った時にすぐ診療枠を確保できます。</div>
           </div>
           <div class="reason-display-item">
             <div class="reason-icon-wrapper">
               <div class="reason-icon"><i class="fas fa-clock"></i></div>
             </div>
             <div class="reason-title">診察を直ぐに受けられる</div>
-            <div class="reason-description"></div>
+            <div class="reason-description">現地ドクターと専属日本語通訳士がオンラインで待機。体調不良のときも、待ち時間なくスムーズに受診できます。</div>
           </div>
           <div class="reason-display-item">
             <div class="reason-icon-wrapper">
               <div class="reason-icon"><i class="fas fa-shield-alt"></i></div>
             </div>
             <div class="reason-title">海外旅行保険適用</div>
-            <div class="reason-description"></div>
+            <div class="reason-description">ご加入の海外旅行保険が適用可能。キャッシュレス診療にも対応してますので、保険適用の条件をクリアしていればお立替なく受診いただけます。</div>
           </div>
         </div>
       </div>
@@ -1862,7 +1930,7 @@
         </div>
 
         <div class="footer-section">
-          <h3>診療時間</h3>
+          <h3>診療時間(シドニー時間)</h3>
           <div style="background: white; border-radius: 8px; padding: 20px; margin-top: 20px;">
             <table style="width: 100%; color: #333; font-size: 14px;">
               <tr style="border-bottom: 1px solid #e5e5e5;">
