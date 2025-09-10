@@ -11,21 +11,21 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header className="bg-white border-b border-gray-300 sticky top-0 z-50">
+      <div className="max-w-[1440px] mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 no-underline">
-          <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white text-2xl">
+          <div className="w-[42px] h-[42px] bg-emerald-500 rounded-lg flex items-center justify-center text-white text-2xl">
             <FaLeaf />
           </div>
-          <div className="text-lg font-bold text-gray-800">
+          <div className="text-lg font-bold text-gray-800 hidden sm:block">
             よつばオンラインメディカル
           </div>
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-8 list-none m-0 p-0">
+        <nav className="hidden lg:block">
+          <ul className="flex gap-[30px] list-none m-0 p-0">
             <li>
               <a href="#" className="text-gray-800 text-sm px-3 py-2 no-underline hover:opacity-70 transition-opacity">
                 診療内容
@@ -55,7 +55,7 @@ export default function Header() {
         </nav>
         
         {/* Desktop CTA Button */}
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-5">
           <a 
             href="#" 
             className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded no-underline flex items-center gap-2 font-bold transition-colors"
@@ -68,7 +68,7 @@ export default function Header() {
         {/* Mobile Hamburger Button */}
         <button 
           onClick={toggleMenu}
-          className="md:hidden p-2 text-gray-800 hover:bg-gray-100 rounded transition-colors"
+          className="lg:hidden p-2 text-gray-800 hover:bg-gray-100 rounded transition-colors"
           aria-label="メニューを開く"
         >
           {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -76,7 +76,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white border-t border-gray-200 transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+      <div className={`lg:hidden bg-white border-t border-gray-200 transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <nav className="px-6 py-4">
           <ul className="flex flex-col gap-4 list-none m-0 p-0">
             <li>

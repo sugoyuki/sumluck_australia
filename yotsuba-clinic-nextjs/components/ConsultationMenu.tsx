@@ -79,36 +79,36 @@ const ConsultationMenu: React.FC = () => {
         }}
       />
       
-      <div className="max-w-7xl mx-auto px-4 md:px-15 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl text-white font-bold relative inline-block">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-[60px] relative z-10">
+        <div className="text-center mb-[50px]">
+          <h2 className="text-[32px] text-white font-bold relative inline-block w-full">
             オンライン診療のメニュー
-            <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-white/80 rounded-full block"></span>
+            <span className="absolute -bottom-[15px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-white/80 rounded-sm block"></span>
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-full mx-auto">
           {menuItems.map((item, index) => (
             <div
               key={index}
-              className={`bg-white/95 backdrop-blur-sm rounded-2xl p-8 text-center transition-all duration-300 cursor-pointer min-h-32 flex flex-col justify-start relative ${
+              className={`bg-white/98 backdrop-blur-sm rounded-2xl px-[35px] py-[30px] text-center transition-all duration-300 cursor-pointer min-h-[130px] flex flex-col justify-start relative ${
                 hoveredIndex === index 
                   ? 'bg-white transform -translate-y-1 shadow-xl' 
-                  : 'shadow-md'
+                  : 'shadow-lg'
               }`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl">
+              <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-[15px] text-white text-[22px]">
                 {item.icon}
               </div>
-              <div className={`font-bold text-lg mb-3 leading-tight ${
+              <div className={`font-bold text-xl mb-[15px] leading-[1.2] ${
                 hoveredIndex === index ? 'text-emerald-600' : 'text-emerald-500'
               }`}>
                 {item.title}
               </div>
-              <div className={`text-sm leading-relaxed whitespace-pre-line ${
-                hoveredIndex === index ? 'text-gray-800' : 'text-gray-600'
+              <div className={`text-sm leading-[1.6] whitespace-pre-line ${
+                hoveredIndex === index ? 'text-gray-800' : 'text-gray-700'
               }`}>
                 {item.description}
               </div>

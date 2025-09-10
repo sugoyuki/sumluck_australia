@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gray-800 text-white pt-12 md:pt-16 pb-4 md:pb-5">
-      <div className="max-w-6xl mx-auto px-4 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-8 md:mb-10">
+    <footer className="bg-gray-800 text-white pt-[60px] pb-5">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-[120px] grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-[60px] mb-10">
         <div>
           <h3 className="text-lg text-emerald-500 mb-4 md:mb-5 font-bold">
             よつばオンラインメディカル
