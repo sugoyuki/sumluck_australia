@@ -21,7 +21,7 @@
         color: #333;
         background-color: #fff;
         overflow-x: hidden;
-        word-break: keep-all;
+        word-break: auto-phrase;
         overflow-wrap: break-word;
       }
       
@@ -30,8 +30,15 @@
       }
       
       p, span, div, h1, h2, h3, h4, h5, h6, li, td, th {
-        word-break: keep-all;
+        word-break: auto-phrase;
         overflow-wrap: break-word;
+      }
+      
+      @supports not (word-break: auto-phrase) {
+        p, span, div, h1, h2, h3, h4, h5, h6, li, td, th {
+          word-break: break-all;
+          line-break: strict;
+        }
       }
 
       /* ヘッダー */
