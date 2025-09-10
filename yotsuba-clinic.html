@@ -21,23 +21,16 @@
         color: #333;
         background-color: #fff;
         overflow-x: hidden;
-        word-break: auto-phrase;
-        overflow-wrap: break-word;
       }
       
       html {
         overflow-x: hidden;
       }
       
-      p, span, div, h1, h2, h3, h4, h5, h6, li, td, th {
-        word-break: auto-phrase;
-        overflow-wrap: break-word;
-      }
-      
-      @supports not (word-break: auto-phrase) {
-        p, span, div, h1, h2, h3, h4, h5, h6, li, td, th {
-          word-break: break-all;
-          line-break: strict;
+      /* モバイル用の改行制御 */
+      @media (min-width: 768px) {
+        .mobile-break {
+          display: none;
         }
       }
 
@@ -1643,7 +1636,7 @@
               <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">すぐに相談できる安心感</h3>
             </div>
             <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
-              急な体調不良やお子様の発熱にも、<br>
+              急な体調不良やお子様の発熱にも、<br class="mobile-break">
               待たずに医師と繋がれます。
             </p>
           </div>
@@ -1657,9 +1650,8 @@
               <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">海外生活にフィット</h3>
             </div>
             <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
-              ワーキングホリデー、留学、駐在、旅行など、<br>
-              あらゆる場面で日本で受診するのと同じくらいの<br>
-              安心感をお届けします。
+              ワーキングホリデー、留学、駐在、旅行など、<br class="mobile-break">
+              あらゆる場面で日本で受診するのと<br class="mobile-break">同じくらいの安心感をお届けします。
             </p>
           </div>
         </div>
@@ -1670,7 +1662,7 @@
     <section style="padding: 80px 0; background: #ecfdf5;">
       <div style="max-width: 900px; margin: 0 auto; padding: 0 60px;">
         <h2 style="font-size: 34px; color: #10b981; text-align: center; margin-bottom: 60px;">
-          初めての方でも簡単！3ステップで完了
+          初めての方でも簡単！<br class="mobile-break">3ステップで完了
         </h2>
 
         <!-- 縦方向のステップレイアウト -->
@@ -1686,8 +1678,8 @@
             <div style="flex: 1;">
               <h3 style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">かんたん予約</h3>
               <p style="color: #666; line-height: 1.8; font-size: 16px;">
-                お電話またはLINEでご予約いただくだけ。<br>
-                症状をお伺いし、最適な医師と日本語通訳士を手配いたします。<br>
+                お電話またはLINEで<br class="mobile-break">ご予約いただくだけ。<br>
+                症状をお伺いし、<br class="mobile-break">最適な医師と日本語通訳士を<br class="mobile-break">手配いたします。<br>
                 面倒な手続きは一切不要です。
               </p>
             </div>
@@ -1711,9 +1703,9 @@
             <div style="flex: 1;">
               <h3 style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">オンライン診察</h3>
               <p style="color: #666; line-height: 1.8; font-size: 16px;">
-                予約時間になったら、スマホやPCでオンライン診察室へ。<br>
-                日本語通訳士が同席し、医師との会話を完全サポート。<br>
-                言葉の心配なく、安心して診察を受けられます。
+                予約時間になったら、<br class="mobile-break">スマホやPCで<br class="mobile-break">オンライン診察室へ。<br>
+                日本語通訳士が同席し、<br class="mobile-break">医師との会話を完全サポート。<br>
+                言葉の心配なく、<br class="mobile-break">安心して診察を受けられます。
               </p>
             </div>
           </div>
@@ -1736,9 +1728,9 @@
             <div style="flex: 1;">
               <h3 style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">処方箋発行＆保険サポート</h3>
               <p style="color: #666; line-height: 1.8; font-size: 16px;">
-                診察後すぐに処方箋をお渡しし、お近くの薬局でお薬を受け取れます。<br>
-                海外旅行保険の申請もフルサポート。<br>
-                必要書類の準備から申請まで、すべてお手伝いいたします。
+                診察後すぐに処方箋をお渡しし、<br class="mobile-break">お近くの薬局で<br class="mobile-break">お薬を受け取れます。<br>
+                海外旅行保険の申請も<br class="mobile-break">フルサポート。<br>
+                必要書類の準備から申請まで、<br class="mobile-break">すべてお手伝いいたします。
               </p>
             </div>
           </div>
