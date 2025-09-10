@@ -25,64 +25,29 @@ const TargetUsers: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '80px 0', background: '#fff' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 60px' }}>
-        <h2 style={{ 
-          fontSize: '34px', 
-          color: '#10b981', 
-          textAlign: 'center', 
-          marginBottom: '20px', 
-          fontWeight: 'bold' 
-        }}>
+    <section className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-15">
+        <h2 className="text-4xl text-emerald-500 text-center mb-5 font-bold">
           皆様にご利用いただいています！
         </h2>
-        <p style={{ 
-          fontSize: '16px', 
-          color: '#666', 
-          textAlign: 'center', 
-          marginBottom: '60px' 
-        }}>
+        <p className="text-base text-gray-600 text-center mb-15">
           オーストラリアで日本語医療サポートが必要なすべての方へ
         </p>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(2, 1fr)', 
-          gap: '30px', 
-          maxWidth: '1000px', 
-          margin: '0 auto' 
-        }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {users.map((user, index) => (
             <div
               key={index}
-              style={{
-                background: 'white',
-                borderRadius: '12px',
-                padding: '30px',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '20px'
-              }}
+              className="bg-white rounded-xl p-8 shadow-sm flex items-start gap-5 hover:shadow-md transition-shadow"
             >
-              <div style={{ fontSize: '40px', flexShrink: 0 }}>
+              <div className="flex-shrink-0 text-4xl">
                 {user.icon}
               </div>
               <div>
-                <h3 style={{ 
-                  fontSize: '20px', 
-                  color: '#10b981', 
-                  marginBottom: '10px', 
-                  fontWeight: 'bold' 
-                }}>
+                <h3 className="text-xl text-emerald-500 mb-3 font-bold">
                   {user.title}
                 </h3>
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: '#666', 
-                  lineHeight: '1.6', 
-                  margin: 0 
-                }}>
+                <p className="text-base text-gray-600 leading-relaxed">
                   {user.description}
                 </p>
               </div>
@@ -90,20 +55,9 @@ const TargetUsers: React.FC = () => {
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-          <div style={{ 
-            display: 'inline-block', 
-            background: '#ecfdf5', 
-            border: '2px solid #10b981', 
-            borderRadius: '50px', 
-            padding: '15px 40px' 
-          }}>
-            <p style={{ 
-              fontSize: '16px', 
-              color: '#10b981', 
-              fontWeight: 'bold', 
-              margin: 0 
-            }}>
+        <div className="text-center mt-12">
+          <div className="inline-block bg-emerald-50 border-2 border-emerald-500 rounded-full py-4 px-10">
+            <p className="text-base text-emerald-500 font-bold">
               🌏 オーストラリア全土から診療可能です
             </p>
           </div>

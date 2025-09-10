@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 interface FAQItem {
   question: string;
@@ -46,94 +47,39 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section style={{ background: '#f9fafb', padding: '80px 0' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 60px' }}>
-        <h2 style={{ 
-          fontSize: '34px', 
-          color: '#10b981', 
-          textAlign: 'center', 
-          marginBottom: '50px', 
-          fontWeight: 'bold' 
-        }}>
+    <section className="bg-gray-50 py-16 md:py-20">
+      <div className="max-w-4xl mx-auto px-4 md:px-16">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-emerald-500 text-center mb-10 md:mb-12 font-bold">
           よくあるご質問
         </h2>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+        <div className="flex flex-col gap-3 md:gap-4">
           {faqItems.map((item, index) => (
             <div
               key={index}
-              style={{
-                background: 'white',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                boxShadow: openFAQ === index ? '0 4px 12px rgba(0, 0, 0, 0.1)' : '0 2px 8px rgba(0, 0, 0, 0.05)',
-                transition: 'box-shadow 0.3s'
-              }}
+              className={`bg-white rounded-xl overflow-hidden transition-shadow duration-300 ${
+                openFAQ === index ? 'shadow-lg' : 'shadow-sm'
+              }`}
             >
               <button
-                style={{
-                  width: '100%',
-                  padding: '20px 25px',
-                  background: openFAQ === index ? '#ecfdf5' : 'white',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  textAlign: 'left',
-                  fontSize: '16px',
-                  color: openFAQ === index ? '#10b981' : '#333',
-                  fontWeight: 500,
-                  transition: 'background 0.3s'
-                }}
+                className={`w-full p-4 md:p-5 lg:p-6 border-none cursor-pointer flex justify-between items-center text-left text-sm md:text-base font-medium transition-colors duration-300 ${
+                  openFAQ === index 
+                    ? 'bg-emerald-50 text-emerald-500' 
+                    : 'bg-white text-gray-800 hover:bg-gray-50'
+                }`}
                 onClick={() => toggleFAQ(index)}
-                onMouseEnter={(e) => {
-                  if (openFAQ !== index) {
-                    (e.target as HTMLElement).style.background = '#f9fafb';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (openFAQ !== index) {
-                    (e.target as HTMLElement).style.background = 'white';
-                  }
-                }}
               >
-                <span>{item.question}</span>
-                <span
-                  style={{
-                    fontSize: '24px',
-                    fontWeight: 300,
-                    color: '#10b981',
-                    transition: 'transform 0.3s',
-                    display: 'inline-block',
-                    width: '30px',
-                    height: '30px',
-                    lineHeight: '30px',
-                    textAlign: 'center',
-                    flexShrink: 0,
-                    transform: openFAQ === index ? 'rotate(45deg)' : 'rotate(0deg)'
-                  }}
-                >
-                  +
+                <span className="pr-4">{item.question}</span>
+                <span className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-emerald-500 transition-transform duration-300">
+                  {openFAQ === index ? <FaMinus /> : <FaPlus />}
                 </span>
               </button>
               <div
-                style={{
-                  maxHeight: openFAQ === index ? '300px' : '0',
-                  overflow: 'hidden',
-                  transition: openFAQ === index 
-                    ? 'max-height 0.3s ease-in, padding 0.3s ease-in'
-                    : 'max-height 0.3s ease-out, padding 0.3s ease-out',
-                  background: '#f9fafb',
-                  padding: openFAQ === index ? '20px 25px' : '0 25px'
-                }}
+                className={`overflow-hidden transition-all duration-300 bg-gray-50 ${
+                  openFAQ === index ? 'max-h-96 py-4 md:py-5 px-4 md:px-5 lg:px-6' : 'max-h-0 py-0 px-4 md:px-5 lg:px-6'
+                }`}
               >
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: '#666', 
-                  lineHeight: '1.7', 
-                  margin: 0 
-                }}>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed m-0">
                   {item.answer}
                 </p>
               </div>

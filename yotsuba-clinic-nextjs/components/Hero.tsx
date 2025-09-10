@@ -1,198 +1,63 @@
+import { FaPhone, FaShieldAlt, FaClock, FaCheckCircle } from 'react-icons/fa';
+
 export default function Hero() {
   return (
-    <section style={{
-      background: '#f9fafb',
-      minHeight: '550px',
-      position: 'relative',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '60px 0'
-    }}>
-      <div style={{
-        maxWidth: '1400px',
-        width: '100%',
-        margin: '0 auto',
-        padding: '0 60px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '60px'
-      }}>
-        <div style={{
-          flex: '0 0 350px',
-          height: '400px',
-          background: '#f9fafb',
-          borderRadius: '8px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#9ca3af',
-          fontSize: '16px',
-          border: '2px dashed #d1d5db'
-        }}>
+    <section className="bg-gray-50 min-h-screen relative flex items-center py-16 md:py-20">
+      <div className="max-w-7xl w-full mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+        {/* Desktop Image */}
+        <div className="hidden md:flex flex-shrink-0 w-80 h-96 bg-gray-50 rounded-lg items-center justify-center text-gray-400 text-base border-2 border-dashed border-gray-300">
           人物写真スペース
         </div>
         
-        <div style={{ flex: 1 }}>
-          <div style={{
-            color: '#10b981',
-            fontSize: '22px',
-            marginBottom: '20px',
-            textAlign: 'center'
-          }}>
+        {/* Content */}
+        <div className="flex-1">
+          <div className="text-emerald-500 text-lg md:text-xl mb-4 md:mb-5 text-center">
             ＼ オーストラリアにいらっしゃる日本人の皆様へ／<br />
             PC・スマホで完結する病院受診を提供します
           </div>
           
-          <h1 style={{
-            fontSize: '72px',
-            color: '#10b981',
-            marginBottom: '50px',
-            fontWeight: 'bold',
-            lineHeight: 1.1,
-            textAlign: 'center'
-          }}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl text-emerald-500 mb-8 md:mb-10 font-bold leading-tight text-center">
             オンライン診療
           </h1>
           
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '25px',
-            marginBottom: '45px'
-          }}>
-            <div style={{
-              background: 'white',
-              border: '3px solid #10b981',
-              borderRadius: '16px',
-              padding: '20px 35px',
-              minWidth: '240px',
-              position: 'relative',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '85px'
-            }}>
-              <div style={{
-                width: '64px',
-                height: '64px',
-                background: '#10b981',
-                borderRadius: '50%',
-                position: 'absolute',
-                top: '-32px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: '30px'
-              }}>
-                📱
+          {/* Feature Cards */}
+          <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-8 md:mb-10">
+            <div className="bg-white border-4 border-emerald-500 rounded-2xl p-5 md:p-8 min-w-0 md:min-w-60 relative flex items-center justify-center min-h-24">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-emerald-500 rounded-full absolute -top-7 md:-top-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white text-2xl">
+                <FaPhone />
               </div>
-              <div style={{
-                fontSize: '18px',
-                color: '#333',
-                fontWeight: 'bold',
-                lineHeight: 1.4,
-                marginTop: '20px',
-                textAlign: 'center'
-              }}>
+              <div className="text-base md:text-lg text-gray-800 font-bold leading-snug mt-5 text-center">
                 安心の日本語通訳
               </div>
             </div>
             
-            <div style={{
-              background: 'white',
-              border: '3px solid #10b981',
-              borderRadius: '16px',
-              padding: '20px 35px',
-              minWidth: '240px',
-              position: 'relative',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '85px'
-            }}>
-              <div style={{
-                width: '64px',
-                height: '64px',
-                background: '#10b981',
-                borderRadius: '50%',
-                position: 'absolute',
-                top: '-32px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: '30px'
-              }}>
-                🚚
+            <div className="bg-white border-4 border-emerald-500 rounded-2xl p-5 md:p-8 min-w-0 md:min-w-60 relative flex items-center justify-center min-h-24">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-emerald-500 rounded-full absolute -top-7 md:-top-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white text-2xl">
+                <FaCheckCircle />
               </div>
-              <div style={{
-                fontSize: '18px',
-                color: '#333',
-                fontWeight: 'bold',
-                lineHeight: 1.4,
-                marginTop: '20px',
-                textAlign: 'center'
-              }}>
+              <div className="text-base md:text-lg text-gray-800 font-bold leading-snug mt-5 text-center">
                 すぐに予約可能
               </div>
             </div>
             
-            <div style={{
-              background: 'white',
-              border: '3px solid #10b981',
-              borderRadius: '16px',
-              padding: '20px 35px',
-              minWidth: '240px',
-              position: 'relative',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '85px'
-            }}>
-              <div style={{
-                width: '64px',
-                height: '64px',
-                background: '#10b981',
-                borderRadius: '50%',
-                position: 'absolute',
-                top: '-32px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: '30px'
-              }}>
-                ⏰
+            <div className="bg-white border-4 border-emerald-500 rounded-2xl p-5 md:p-8 min-w-0 md:min-w-60 relative flex items-center justify-center min-h-24">
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-emerald-500 rounded-full absolute -top-7 md:-top-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center text-white text-2xl">
+                <FaShieldAlt />
               </div>
-              <div style={{
-                fontSize: '18px',
-                color: '#333',
-                fontWeight: 'bold',
-                lineHeight: 1.4,
-                marginTop: '20px',
-                textAlign: 'center'
-              }}>
+              <div className="text-base md:text-lg text-gray-800 font-bold leading-snug mt-5 text-center">
                 海外旅行保険対応
               </div>
             </div>
           </div>
           
-          <div style={{
-            color: '#10b981',
-            fontSize: '22px',
-            textAlign: 'center',
-            fontWeight: 500,
-            marginTop: '20px'
-          }}>
+          <div className="text-emerald-500 text-lg md:text-xl text-center font-medium mt-5">
             ～ 受診からお薬の処方箋のお渡しまで～
           </div>
+        </div>
+        
+        {/* Mobile Image */}
+        <div className="md:hidden flex-shrink-0 w-full max-w-sm h-64 bg-gray-50 rounded-lg flex items-center justify-center text-gray-400 text-base border-2 border-dashed border-gray-300">
+          人物写真スペース
         </div>
       </div>
     </section>

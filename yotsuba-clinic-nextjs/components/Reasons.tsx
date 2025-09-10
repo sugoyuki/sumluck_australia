@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
 export default function Reasons() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const reasons = [
     {
       icon: "📅",
@@ -22,73 +18,27 @@ export default function Reasons() {
   ];
 
   return (
-    <section style={{ padding: '80px 0', background: '#fff' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 60px' }}>
-        <h2 style={{ 
-          fontSize: '34px', 
-          color: '#10b981', 
-          textAlign: 'center', 
-          marginBottom: '50px', 
-          fontWeight: 'bold' 
-        }}>
+    <section className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-15">
+        <h2 className="text-4xl text-emerald-500 text-center mb-12 font-bold">
           よつばオンラインメディカルが選ばれる理由
         </h2>
         
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(3, 1fr)', 
-          gap: '30px',
-          maxWidth: '1100px',
-          margin: '0 auto'
-        }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {reasons.map((reason, index) => (
             <div 
               key={index}
-              style={{
-                background: 'white',
-                border: '2px solid #10b981',
-                borderRadius: '12px',
-                padding: '35px 25px',
-                textAlign: 'center',
-                transition: 'transform 0.3s, box-shadow 0.3s',
-                transform: hoveredIndex === index ? 'translateY(-4px)' : 'translateY(0)',
-                boxShadow: hoveredIndex === index ? '0 8px 20px rgba(16, 185, 129, 0.15)' : '0 2px 8px rgba(0, 0, 0, 0.1)',
-                cursor: 'pointer'
-              }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="bg-white border-2 border-emerald-500 rounded-xl p-9 text-center transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/15"
             >
-              <div style={{
-                width: '80px',
-                height: '80px',
-                margin: '0 auto 20px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: '#10b981',
-                borderRadius: '50%'
-              }}>
-                <div style={{
-                  color: 'white',
-                  fontSize: '40px'
-                }}>
+              <div className="w-20 h-20 mx-auto mb-5 flex items-center justify-center bg-emerald-500 rounded-full">
+                <div className="text-white text-4xl">
                   {reason.icon}
                 </div>
               </div>
-              <div style={{
-                fontSize: '18px',
-                color: '#333',
-                fontWeight: 'bold',
-                marginBottom: '12px',
-                lineHeight: '1.4'
-              }}>
+              <div className="text-lg text-gray-800 font-bold mb-3 leading-tight">
                 {reason.title}
               </div>
-              <div style={{
-                fontSize: '14px',
-                color: '#666',
-                lineHeight: '1.6'
-              }}>
+              <div className="text-sm text-gray-600 leading-relaxed">
                 {reason.description}
               </div>
             </div>

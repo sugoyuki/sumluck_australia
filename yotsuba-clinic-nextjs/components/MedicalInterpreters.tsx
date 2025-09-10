@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUserMd } from 'react-icons/fa';
 
 const MedicalInterpreters: React.FC = () => {
   const interpreters = [
@@ -30,82 +31,33 @@ const MedicalInterpreters: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '80px 0', background: '#fff' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 60px' }}>
-        <h2 style={{ 
-          fontSize: '34px', 
-          color: '#10b981', 
-          marginBottom: '20px', 
-          fontWeight: 'bold', 
-          textAlign: 'center' 
-        }}>
+    <section className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-15">
+        <h2 className="text-4xl text-emerald-500 mb-5 font-bold text-center">
           充実した日本語医療通訳体制
         </h2>
-        <p style={{ 
-          fontSize: '16px', 
-          color: '#666', 
-          marginBottom: '60px', 
-          lineHeight: '1.6', 
-          textAlign: 'center' 
-        }}>
+        <p className="text-base text-gray-600 mb-15 leading-relaxed text-center">
           言葉の心配なく、安心して診療を受けていただけます
         </p>
 
         {/* 医療通訳者リスト */}
-        <div style={{ 
-          display: 'flex', 
-          flexDirection: 'column', 
-          gap: '25px', 
-          marginBottom: '60px' 
-        }}>
+        <div className="flex flex-col gap-6 mb-15">
           {interpreters.map((interpreter, index) => (
             <div
               key={index}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '30px',
-                background: 'white',
-                borderRadius: '12px',
-                padding: '30px',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
-              }}
+              className="flex items-center gap-8 bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div style={{
-                flexShrink: 0,
-                width: '120px',
-                height: '120px',
-                background: '#f9fafb',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#9ca3af',
-                fontSize: '14px',
-                border: '2px dashed #d1d5db'
-              }}>
+              <div className="flex-shrink-0 w-30 h-30 bg-gray-50 rounded-full flex items-center justify-center text-emerald-500 text-sm border-2 border-dashed border-gray-300">
                 写真
               </div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ 
-                  fontSize: '20px', 
-                  color: '#333', 
-                  marginBottom: '5px' 
-                }}>
+              <div className="flex-1">
+                <h3 className="text-xl text-gray-800 mb-1 font-semibold">
                   {interpreter.name}
                 </h3>
-                <p style={{ 
-                  fontSize: '14px', 
-                  color: '#999', 
-                  marginBottom: '10px' 
-                }}>
+                <p className="text-sm text-gray-500 mb-2">
                   {interpreter.nameEn}
                 </p>
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: '#666', 
-                  lineHeight: '1.6' 
-                }}>
+                <p className="text-base text-gray-600 leading-relaxed">
                   {interpreter.description}
                 </p>
               </div>

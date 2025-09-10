@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { FaChevronUp } from 'react-icons/fa';
 
 const PageTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,27 +38,14 @@ const PageTop: React.FC = () => {
   return (
     <button
       onClick={scrollToTop}
-      style={{
-        position: 'fixed',
-        bottom: '100px',
-        right: '20px',
-        background: '#34495e',
-        color: 'white',
-        padding: '15px 10px',
-        textDecoration: 'none',
-        writingMode: 'vertical-rl',
-        borderRadius: '4px',
-        fontSize: '14px',
-        opacity: isHovered ? 1 : 0.8,
-        transition: 'opacity 0.3s',
-        border: 'none',
-        cursor: 'pointer',
-        zIndex: 1000
-      }}
+      className={`fixed bottom-20 md:bottom-24 right-4 md:right-5 bg-gray-800 text-white p-3 md:p-4 rounded border-none cursor-pointer z-50 transition-all duration-300 hover:bg-gray-700 ${
+        isHovered ? 'opacity-100' : 'opacity-80'
+      } flex flex-col items-center gap-1`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      PAGE TOP
+      <FaChevronUp className="text-lg md:text-xl" />
+      <span className="text-xs hidden md:block">TOP</span>
     </button>
   );
 };

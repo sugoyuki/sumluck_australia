@@ -30,67 +30,35 @@ const ConsultationFlow: React.FC = () => {
   ];
 
   const ArrowIcon = () => (
-    <div style={{ textAlign: 'center', margin: '-20px 0 -20px 45px' }}>
+    <div className="text-center -my-5 ml-11">
       <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <path 
-          d="M20 5 L20 30 M12 22 L20 30 L28 22" 
-          stroke="#10b981" 
-          strokeWidth="2" 
-          fill="none" 
-          opacity="0.4"
-        />
+        <path d="M20 5 L20 30 M12 22 L20 30 L28 22" stroke="#10b981" strokeWidth="2" fill="none" opacity="0.4"/>
       </svg>
     </div>
   );
 
   return (
-    <section style={{ padding: '80px 0', background: '#ecfdf5' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 60px' }}>
-        <h2 style={{ 
-          fontSize: '34px', 
-          color: '#10b981', 
-          textAlign: 'center', 
-          marginBottom: '60px' 
-        }}>
+    <section className="py-20 bg-emerald-50">
+      <div className="max-w-4xl mx-auto px-4 md:px-15">
+        <h2 className="text-3xl md:text-4xl text-emerald-500 text-center mb-15 font-bold">
           初めての方でも簡単！オンライン診療の流れ
         </h2>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+        <div className="flex flex-col gap-8">
           {steps.map((step, index) => (
             <React.Fragment key={step.number}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '30px' }}>
-                <div style={{
-                  background: '#10b981',
-                  color: 'white',
-                  borderRadius: '50%',
-                  width: '90px',
-                  height: '90px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 'bold',
-                  fontSize: '14px',
-                  flexShrink: 0
-                }}>
-                  <div>
-                    <div style={{ fontSize: '12px' }}>STEP</div>
-                    <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{step.number}</div>
+              <div className="flex items-start gap-8">
+                <div className="bg-emerald-500 text-white rounded-full w-22 h-22 flex items-center justify-center font-bold text-sm flex-shrink-0">
+                  <div className="text-center">
+                    <div className="text-xs">STEP</div>
+                    <div className="text-2xl font-bold">{step.number}</div>
                   </div>
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ 
-                    fontSize: '24px', 
-                    color: '#10b981', 
-                    marginBottom: '15px' 
-                  }}>
+                <div className="flex-1">
+                  <h3 className="text-2xl text-emerald-500 mb-4 font-bold">
                     {step.title}
                   </h3>
-                  <p style={{ 
-                    color: '#666', 
-                    lineHeight: '1.8', 
-                    fontSize: '16px',
-                    whiteSpace: 'pre-line'
-                  }}>
+                  <p className="text-gray-600 leading-relaxed text-base whitespace-pre-line">
                     {step.description}
                   </p>
                 </div>

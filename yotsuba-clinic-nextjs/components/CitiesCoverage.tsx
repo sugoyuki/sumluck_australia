@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const CitiesCoverage: React.FC = () => {
   const cities = [
@@ -15,90 +16,48 @@ const CitiesCoverage: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '80px 0', background: '#fff' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 60px' }}>
-        <h2 style={{ 
-          fontSize: '34px', 
-          color: '#10b981', 
-          textAlign: 'center', 
-          marginBottom: '20px', 
-          fontWeight: 'bold' 
-        }}>
+    <section className="py-16 md:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-16">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl text-emerald-500 text-center mb-4 md:mb-5 font-bold">
           対応都市一覧
         </h2>
-        <p style={{ 
-          fontSize: '16px', 
-          color: '#666', 
-          textAlign: 'center', 
-          marginBottom: '60px' 
-        }}>
+        <p className="text-sm md:text-base text-gray-600 text-center mb-12 md:mb-16">
           オンライン診療に特化した当社では下記のような様々な主要都市から受付しております。
         </p>
 
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '80px', 
-          justifyContent: 'center' 
-        }}>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 justify-center">
           {/* オーストラリア地図 */}
-          <div style={{ flex: '0 0 350px' }}>
+          <div className="flex-shrink-0 w-full max-w-sm lg:w-96">
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag-map_of_Australia.svg/400px-Flag-map_of_Australia.svg.png"
               alt="オーストラリア地図"
-              style={{
-                width: '100%',
-                height: 'auto',
-                filter: 'hue-rotate(90deg) saturate(1.5) brightness(0.9)'
-              }}
+              className="w-full h-auto hue-rotate-90 saturate-150 brightness-90"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
                 if (target.parentElement) {
-                  target.parentElement.innerHTML = '<div style="background: #10b981; width: 100%; height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">オーストラリア地図</div>';
+                  target.parentElement.innerHTML = '<div class="bg-emerald-500 w-full h-72 rounded-3xl flex items-center justify-center text-white text-lg">オーストラリア地図</div>';
                 }
               }}
             />
           </div>
 
           {/* 都市リスト */}
-          <div style={{ flex: 1 }}>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(2, 1fr)', 
-              gap: '25px 60px' 
-            }}>
+          <div className="flex-1 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
               {cities.map((city, index) => (
-                <div key={index} style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '12px' 
-                }}>
-                  <span style={{ color: '#10b981', fontSize: '20px' }}>📍</span>
-                  <span style={{ fontSize: '18px', color: '#333' }}>{city}</span>
+                <div key={index} className="flex items-center gap-3">
+                  <FaMapMarkerAlt className="text-emerald-500 text-lg" />
+                  <span className="text-base md:text-lg text-gray-800">{city}</span>
                 </div>
               ))}
             </div>
 
-            <div style={{ 
-              marginTop: '40px', 
-              padding: '20px', 
-              background: '#ecfdf5', 
-              borderRadius: '8px', 
-              textAlign: 'center' 
-            }}>
-              <h3 style={{ 
-                fontSize: '20px', 
-                color: '#10b981', 
-                marginBottom: '10px' 
-              }}>
+            <div className="mt-8 md:mt-10 p-4 md:p-5 bg-emerald-50 rounded-lg text-center">
+              <h3 className="text-lg md:text-xl text-emerald-500 mb-2 md:mb-3 font-bold">
                 オーストラリア全土対応
               </h3>
-              <p style={{ 
-                fontSize: '15px', 
-                color: '#666', 
-                margin: 0 
-              }}>
+              <p className="text-sm md:text-base text-gray-600 m-0">
                 上記以外の都市でも対応可能です
               </p>
             </div>

@@ -1,188 +1,115 @@
 import React, { useState } from 'react';
+import { FaStethoscope, FaLungs, FaHeartbeat, FaBaby, FaHospital, FaBandAid, FaUser, FaEye, FaVenus, FaBrain, FaBuilding, FaClipboardList } from 'react-icons/fa';
 
 const ConsultationMenu: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const menuItems = [
     {
-      icon: '🩺',
+      icon: <FaStethoscope />,
       title: '一般内科',
       description: '風邪、インフルエンザ、\n食中毒、下痢、腹痛、\n頭痛など'
     },
     {
-      icon: '🫁',
+      icon: <FaLungs />,
       title: '呼吸器科',
       description: '喘息、気管支炎、\n肺炎、結核など'
     },
     {
-      icon: '❤️',
+      icon: <FaHeartbeat />,
       title: '循環器科',
       description: '高血圧、不整脈、\n心臓病など'
     },
     {
-      icon: '👶',
+      icon: <FaBaby />,
       title: '小児科',
       description: 'お子様の体調不良、\n予防接種、発育相談'
     },
     {
-      icon: '🏥',
+      icon: <FaHospital />,
       title: '外科',
       description: '怪我、切り傷、やけど、\nねんざなど'
     },
     {
-      icon: '🩹',
+      icon: <FaBandAid />,
       title: '皮膚科',
       description: 'にきび、湿疹、\nじんましんなど'
     },
     {
-      icon: '👂',
+      icon: <FaUser />,
       title: '耳鼻科',
       description: '耳、鼻、のどの疾患、\nアレルギー性鼻炎や\n花粉症など'
     },
     {
-      icon: '👁️',
+      icon: <FaEye />,
       title: '眼科',
       description: 'ものもらい、結膜炎、\n眼精疲労など'
     },
     {
-      icon: '👩',
+      icon: <FaVenus />,
       title: '婦人科',
       description: '女性医師・\n女性スタッフが\n対応します'
     },
     {
-      icon: '🧠',
+      icon: <FaBrain />,
       title: '心療内科',
       description: '不眠、不安症状、\n抑うつ症状、\nストレス関連疾患など'
     },
     {
-      icon: '🏨',
+      icon: <FaBuilding />,
       title: 'その他専門科',
       description: '循環器科、消化器科、\n整形外科、泌尿器科など'
     },
     {
-      icon: '📋',
+      icon: <FaClipboardList />,
       title: '健康診断',
       description: '予約代行可能です。\n健診レポートを\nオプションで\n日本語訳も可能です。'
     }
   ];
 
   return (
-    <section style={{
-      background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-      padding: '80px 0',
-      margin: 0,
-      position: 'relative'
-    }}>
+    <section className="bg-gradient-to-br from-emerald-500 to-emerald-600 py-20 relative">
       {/* Background Pattern */}
-      <div style={{
-        content: '',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>')`,
-        backgroundSize: '100px 100px',
-        backgroundRepeat: 'repeat',
-        opacity: 0.3
-      }} />
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>')`,
+          backgroundSize: '100px 100px',
+          backgroundRepeat: 'repeat'
+        }}
+      />
       
-      <div style={{
-        maxWidth: '1600px',
-        margin: '0 auto',
-        padding: '0 60px',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        <h2 style={{
-          fontSize: '32px',
-          color: 'white',
-          textAlign: 'center',
-          marginBottom: '50px',
-          fontWeight: 'bold',
-          position: 'relative',
-          display: 'inline-block',
-          width: '100%'
-        }}>
-          オンライン診療のメニュー
-          <span style={{
-            content: '',
-            position: 'absolute',
-            bottom: '-15px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '80px',
-            height: '4px',
-            background: 'rgba(255, 255, 255, 0.8)',
-            borderRadius: '2px',
-            display: 'block'
-          }} />
-        </h2>
+      <div className="max-w-7xl mx-auto px-4 md:px-15 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl text-white font-bold relative inline-block">
+            オンライン診療のメニュー
+            <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-white/80 rounded-full block"></span>
+          </h2>
+        </div>
         
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '24px',
-          marginBottom: '60px',
-          maxWidth: '100%',
-          marginLeft: 'auto',
-          marginRight: 'auto'
-        }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {menuItems.map((item, index) => (
             <div
               key={index}
-              style={{
-                background: hoveredIndex === index ? 'white' : 'rgba(255, 255, 255, 0.98)',
-                border: 'none',
-                borderRadius: '16px',
-                padding: '30px 35px',
-                textAlign: 'center',
-                textDecoration: 'none',
-                transition: 'all 0.3s',
-                cursor: 'pointer',
-                minHeight: '130px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                boxShadow: hoveredIndex === index ? '0 12px 24px rgba(0, 0, 0, 0.12)' : '0 2px 8px rgba(0, 0, 0, 0.08)',
-                backdropFilter: 'blur(10px)',
-                position: 'relative',
-                transform: hoveredIndex === index ? 'translateY(-4px)' : 'translateY(0)'
-              }}
+              className={`bg-white/95 backdrop-blur-sm rounded-2xl p-8 text-center transition-all duration-300 cursor-pointer min-h-32 flex flex-col justify-start relative ${
+                hoveredIndex === index 
+                  ? 'bg-white transform -translate-y-1 shadow-xl' 
+                  : 'shadow-md'
+              }`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div style={{
-                width: '40px',
-                height: '40px',
-                background: '#10b981',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 15px',
-                fontSize: '22px',
-                color: 'white'
-              }}>
+              <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl">
                 {item.icon}
               </div>
-              <div style={{
-                color: hoveredIndex === index ? '#059669' : '#10b981',
-                fontWeight: 700,
-                fontSize: '20px',
-                marginBottom: '15px',
-                lineHeight: '1.2',
-                display: 'block'
-              }}>
+              <div className={`font-bold text-lg mb-3 leading-tight ${
+                hoveredIndex === index ? 'text-emerald-600' : 'text-emerald-500'
+              }`}>
                 {item.title}
               </div>
-              <div style={{
-                color: hoveredIndex === index ? '#1f2937' : '#374151',
-                fontSize: '14px',
-                lineHeight: '1.6',
-                fontWeight: 400,
-                whiteSpace: 'pre-line'
-              }}>
+              <div className={`text-sm leading-relaxed whitespace-pre-line ${
+                hoveredIndex === index ? 'text-gray-800' : 'text-gray-600'
+              }`}>
                 {item.description}
               </div>
             </div>

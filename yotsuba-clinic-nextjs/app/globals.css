@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 * {
   margin: 0;
@@ -16,29 +14,15 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Custom utility classes */
-@layer utilities {
-  .container-max {
-    @apply max-w-7xl mx-auto px-8 md:px-16;
-  }
+/* Custom styles */
+@theme {
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-50: #ecfdf5;
   
-  .section-padding {
-    @apply py-20;
-  }
-  
-  .green-primary {
-    color: #10b981;
-  }
-  
-  .bg-green-primary {
-    background-color: #10b981;
-  }
-  
-  .bg-green-secondary {
-    background-color: #059669;
-  }
-  
-  .bg-green-light {
-    background-color: #ecfdf5;
-  }
+  --spacing-15: 3.75rem;
+  --spacing-25: 6.25rem;
+  --spacing-30: 7.5rem;
+  --spacing-75: 18.75rem;
+  --spacing-88: 22rem;
 }
