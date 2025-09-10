@@ -1137,6 +1137,35 @@
 
       /* レスポンシブ */
       @media (max-width: 768px) {
+        /* ヘッダー */
+        .header-container {
+          padding: 12px 16px;
+        }
+
+        .logo-text {
+          font-size: 14px;
+        }
+
+        .logo-icon {
+          width: 36px;
+          height: 36px;
+        }
+
+        nav {
+          display: none;
+        }
+
+        .btn-appointment {
+          padding: 8px 16px;
+          font-size: 13px;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+          padding: 40px 0;
+          min-height: auto;
+        }
+
         .hero-content {
           flex-direction: column;
           padding: 0 20px;
@@ -1146,47 +1175,283 @@
           display: none;
         }
 
+        .hero-top-text {
+          font-size: 14px;
+          margin-bottom: 16px;
+        }
+
         .hero h1 {
-          font-size: 32px;
+          font-size: 36px;
+          margin-bottom: 30px;
         }
 
-        .flow-steps {
-          grid-template-columns: 1fr;
+        .hero-features {
+          flex-direction: column;
+          gap: 15px;
         }
 
+        .feature-card {
+          width: 100%;
+          min-width: auto;
+          padding: 15px 20px;
+          min-height: 70px;
+        }
+
+        .feature-icon {
+          width: 50px;
+          height: 50px;
+          top: -25px;
+          font-size: 24px;
+        }
+
+        .feature-text {
+          font-size: 16px;
+          margin-top: 15px;
+        }
+
+        .hero-bottom-text {
+          font-size: 16px;
+        }
+
+        /* 対象となる方セクション */
+        section > div > div[style*="grid-template-columns: repeat(2, 1fr)"] {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+        }
+
+        /* なぜオンライン診察セクション */
+        .intro-section {
+          padding: 60px 0;
+        }
+
+        .intro-container {
+          padding: 0 20px;
+        }
+
+        .intro-title {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+
+        div[style*="grid-template-columns: repeat(2, 1fr)"][style*="max-width: 1000px"] {
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
+        }
+
+        /* 診療の流れセクション */
+        section[style*="padding: 80px 0"] {
+          padding: 60px 0 !important;
+        }
+
+        div[style*="max-width: 900px"] {
+          padding: 0 20px !important;
+        }
+
+        h2[style*="font-size: 34px"] {
+          font-size: 24px !important;
+          margin-bottom: 40px !important;
+        }
+
+        div[style*="width: 100px"][style*="height: 100px"] {
+          width: 80px !important;
+          height: 80px !important;
+        }
+
+        div[style*="font-size: 36px"] {
+          font-size: 28px !important;
+        }
+
+        h3[style*="font-size: 26px"] {
+          font-size: 20px !important;
+        }
+
+        p[style*="font-size: 16px"] {
+          font-size: 14px !important;
+        }
+
+        div[style*="gap: 35px"] {
+          gap: 20px !important;
+        }
+
+        /* 診療メニューセクション */
         .menu-grid {
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
         }
 
-        .reasons-grid {
-          grid-template-columns: 1fr;
+        .menu-item {
+          padding: 20px 15px;
+          min-height: 110px;
+        }
+
+        .menu-item-icon {
+          width: 35px;
+          height: 35px;
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+
+        .menu-item-title {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .menu-item-desc {
+          font-size: 12px;
+        }
+
+        /* 選ばれる理由セクション */
+        .reasons-section {
+          padding: 60px 0;
+        }
+
+        .reasons-container {
+          padding: 0 20px;
+        }
+
+        .main-section-title {
+          font-size: 24px;
+          margin-bottom: 30px;
         }
 
         .reasons-grid-display {
           grid-template-columns: 1fr;
-        }
-
-        .footer-content {
-          grid-template-columns: 1fr;
-          padding: 0 20px;
-        }
-
-        nav ul {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .header-container {
-          flex-direction: column;
           gap: 20px;
         }
 
+        .reason-display-item {
+          padding: 30px 20px;
+          min-height: auto;
+        }
+
+        .reason-icon-wrapper {
+          width: 60px;
+          height: 60px;
+        }
+
+        .reason-icon {
+          font-size: 30px;
+        }
+
+        .reason-title {
+          font-size: 16px;
+        }
+
+        .reason-description {
+          font-size: 13px;
+        }
+
+        /* 医療通訳者セクション */
+        div[style*="display: flex"][style*="gap: 30px"][style*="padding: 30px"] {
+          flex-direction: column !important;
+          text-align: center;
+          padding: 20px !important;
+        }
+
+        div[style*="width: 120px"][style*="height: 120px"] {
+          width: 100px !important;
+          height: 100px !important;
+          margin: 0 auto !important;
+        }
+
+        /* 医療顧問紹介 */
+        div[style*="display: flex"][style*="gap: 40px"] {
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center;
+        }
+
+        div[style*="background: #f9fafb"][style*="border-left: 3px solid"] {
+          margin-top: 20px !important;
+        }
+
+        /* 対応都市一覧 */
+        div[style*="display: flex"][style*="gap: 80px"] {
+          flex-direction: column !important;
+          gap: 40px !important;
+        }
+
+        div[style*="flex: 0 0 350px"] {
+          flex: 1 !important;
+          width: 100% !important;
+        }
+
+        div[style*="grid-template-columns: repeat(2, 1fr)"][style*="gap: 25px 60px"] {
+          gap: 15px 20px !important;
+        }
+
+        /* よくあるご質問 */
+        .faq-section {
+          padding: 60px 0;
+        }
+
+        .faq-container {
+          padding: 0 20px;
+        }
+
+        .faq-title {
+          font-size: 24px;
+          margin-bottom: 30px;
+        }
+
+        .faq-question {
+          padding: 15px 20px;
+          font-size: 14px;
+        }
+
+        .faq-answer.active {
+          padding: 15px 20px;
+        }
+
+        /* CTA セクション */
+        section[style*="padding: 100px 0 120px"] {
+          padding: 60px 0 80px !important;
+        }
+
+        h2[style*="font-size: 42px"] {
+          font-size: 24px !important;
+          margin-bottom: 20px !important;
+        }
+
+        p[style*="font-size: 18px"] {
+          font-size: 15px !important;
+        }
+
+        a[style*="font-size: 18px"] {
+          font-size: 16px !important;
+          padding: 14px 30px !important;
+        }
+
+        /* フッター */
+        .footer-content {
+          grid-template-columns: 1fr;
+          padding: 0 20px;
+          gap: 40px;
+        }
+
+        .footer-section h3 {
+          font-size: 16px;
+        }
+
+        /* その他の共通調整 */
         .menu-section-container,
         .intro-container,
         .flow-container,
         .reasons-container,
         .three-reasons-container {
           padding: 0 20px;
+        }
+
+        .section-title {
+          font-size: 24px;
+          margin-bottom: 30px;
+        }
+
+        .page-top {
+          bottom: 60px;
+          right: 15px;
+          padding: 10px 8px;
+          font-size: 12px;
         }
       }
     </style>
@@ -1325,7 +1590,8 @@
               <h3 style="font-size: 20px; color: #333; font-weight: bold; margin: 0;">移動や待ち時間が不要</h3>
             </div>
             <p style="font-size: 15px; color: #666; line-height: 1.7; margin: 0;">
-              病院に行かず、広いオーストラリアのどこからでもご自宅や滞在先から診療が可能。
+              病院に行かず、ご自宅や滞在先など広いオーストラリアの
+どこからでもご自宅や滞在先から診療が可能。
             </p>
           </div>
 
@@ -1462,7 +1728,7 @@
     <!-- 診療メニューセクション -->
     <section class="menu-section">
       <div class="menu-section-container">
-        <h2 class="section-title">オンライン診療のメニュー</h2>
+        <h2 class="section-title">診療メニュー</h2>
         <div class="menu-grid">
           <div class="menu-item">
             <div class="menu-item-icon"><i class="fas fa-stethoscope"></i></div>
