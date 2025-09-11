@@ -28,9 +28,77 @@
       }
       
       /* モバイル用の改行制御 */
-      @media (min-width: 768px) {
+      .mobile-break {
+        display: none;
+      }
+      
+      @media (max-width: 768px) {
         .mobile-break {
-          display: none;
+          display: inline !important;
+        }
+      }
+      
+      @media (min-width: 769px) {
+        .mobile-break {
+          display: none !important;
+        }
+      }
+      
+      /* PC用のステップレイアウト */
+      .step-container {
+        display: block;
+      }
+      
+      .step-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 35px;
+      }
+      
+      .step-content {
+        flex: 1;
+      }
+      
+      @media (min-width: 769px) {
+        .step-description {
+          margin: 0;
+        }
+      }
+      
+      /* モバイル用のステップレイアウト */
+      @media (max-width: 768px) {
+        .step-container {
+          display: block !important;
+        }
+        
+        .step-header {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          margin-bottom: 15px;
+        }
+        
+        .step-circle {
+          width: 80px !important;
+          height: 80px !important;
+          min-width: 80px;
+          flex-shrink: 0;
+        }
+        
+        .step-content {
+          padding-left: 0 !important;
+          flex: 1;
+        }
+        
+        .step-title {
+          font-size: 20px !important;
+          margin: 0 !important;
+          line-height: 1.3 !important;
+        }
+        
+        .step-description {
+          margin-left: 0 !important;
+          padding-left: 15px;
         }
       }
 
@@ -1673,20 +1741,22 @@
         <!-- 縦方向のステップレイアウト -->
         <div style="display: flex; flex-direction: column; gap: 40px;">
           <!-- STEP 1 -->
-          <div style="display: flex; align-items: flex-start; gap: 35px;">
-            <div style="background: #10b981; color: white; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
-              <div style="text-align: center;">
-                <div style="font-size: 13px; line-height: 1;">STEP</div>
-                <div style="font-size: 36px; font-weight: bold; line-height: 1.2;">1</div>
+          <div class="step-container">
+            <div class="step-header">
+              <div class="step-circle" style="background: #10b981; color: white; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                <div style="text-align: center;">
+                  <div style="font-size: 13px; line-height: 1;">STEP</div>
+                  <div style="font-size: 36px; font-weight: bold; line-height: 1.2;">1</div>
+                </div>
               </div>
-            </div>
-            <div style="flex: 1;">
-              <h3 style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">かんたん予約</h3>
-              <p style="color: #666; line-height: 1.8; font-size: 16px;">
-                お電話またはLINEで<br class="mobile-break">ご予約いただくだけ。<br>
-                症状をお伺いし、<br class="mobile-break">最適な医師と日本語通訳士を<br class="mobile-break">手配いたします。<br>
-                面倒な手続きは一切不要です。
-              </p>
+              <div class="step-content">
+                <h3 class="step-title" style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">かんたん予約</h3>
+                <p class="step-description" style="color: #666; line-height: 1.8; font-size: 16px; margin: 0;">
+                  お電話またはLINEで<br class="mobile-break">ご予約いただくだけ。<br>
+                  症状をお伺いし、<br class="mobile-break">最適な医師と日本語通訳士を<br class="mobile-break">手配いたします。<br>
+                  面倒な手続きは一切不要です。
+                </p>
+              </div>
             </div>
           </div>
 
@@ -1698,20 +1768,22 @@
           </div>
 
           <!-- STEP 2 -->
-          <div style="display: flex; align-items: flex-start; gap: 35px;">
-            <div style="background: #10b981; color: white; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
-              <div style="text-align: center;">
-                <div style="font-size: 13px; line-height: 1;">STEP</div>
-                <div style="font-size: 36px; font-weight: bold; line-height: 1.2;">2</div>
+          <div class="step-container">
+            <div class="step-header">
+              <div class="step-circle" style="background: #10b981; color: white; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                <div style="text-align: center;">
+                  <div style="font-size: 13px; line-height: 1;">STEP</div>
+                  <div style="font-size: 36px; font-weight: bold; line-height: 1.2;">2</div>
+                </div>
               </div>
-            </div>
-            <div style="flex: 1;">
-              <h3 style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">オンライン診察</h3>
-              <p style="color: #666; line-height: 1.8; font-size: 16px;">
-                予約時間になったら、<br class="mobile-break">スマホやPCで<br class="mobile-break">オンライン診察室へ。<br>
-                日本語通訳士が同席し、<br class="mobile-break">医師との会話を完全サポート。<br>
-                言葉の心配なく、<br class="mobile-break">安心して診察を受けられます。
-              </p>
+              <div class="step-content">
+                <h3 class="step-title" style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">オンライン診察</h3>
+                <p class="step-description" style="color: #666; line-height: 1.8; font-size: 16px; margin: 0;">
+                  予約時間になったら、<br class="mobile-break">スマホやPCで<br class="mobile-break">オンライン診察室へ。<br>
+                  日本語通訳士が同席し、<br class="mobile-break">医師との会話を完全サポート。<br>
+                  言葉の心配なく、<br class="mobile-break">安心して診察を受けられます。
+                </p>
+              </div>
             </div>
           </div>
 
@@ -1723,20 +1795,22 @@
           </div>
 
           <!-- STEP 3 -->
-          <div style="display: flex; align-items: flex-start; gap: 35px;">
-            <div style="background: #10b981; color: white; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
-              <div style="text-align: center;">
-                <div style="font-size: 13px; line-height: 1;">STEP</div>
-                <div style="font-size: 36px; font-weight: bold; line-height: 1.2;">3</div>
+          <div class="step-container">
+            <div class="step-header">
+              <div class="step-circle" style="background: #10b981; color: white; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                <div style="text-align: center;">
+                  <div style="font-size: 13px; line-height: 1;">STEP</div>
+                  <div style="font-size: 36px; font-weight: bold; line-height: 1.2;">3</div>
+                </div>
               </div>
-            </div>
-            <div style="flex: 1;">
-              <h3 style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">処方箋発行＆保険サポート</h3>
-              <p style="color: #666; line-height: 1.8; font-size: 16px;">
-                診察後すぐに処方箋をお渡しし、<br class="mobile-break">お近くの薬局で<br class="mobile-break">お薬を受け取れます。<br>
-                海外旅行保険の申請も<br class="mobile-break">フルサポート。<br>
-                必要書類の準備から申請まで、<br class="mobile-break">すべてお手伝いいたします。
-              </p>
+              <div class="step-content">
+                <h3 class="step-title" style="font-size: 26px; color: #10b981; margin-bottom: 15px; font-weight: bold;">処方箋発行＆<br class="mobile-break">保険サポート</h3>
+                <p class="step-description" style="color: #666; line-height: 1.8; font-size: 16px; margin: 0;">
+                  診察後すぐに処方箋をお渡しし、<br class="mobile-break">お近くの薬局で<br class="mobile-break">お薬を受け取れます。<br>
+                  海外旅行保険の申請も<br class="mobile-break">フルサポート。<br>
+                  必要書類の準備から申請まで、<br class="mobile-break">すべてお手伝いいたします。
+                </p>
+              </div>
             </div>
           </div>
         </div>
