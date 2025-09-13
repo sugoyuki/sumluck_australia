@@ -132,6 +132,25 @@
           width: 160px !important;
           height: 160px !important;
         }
+
+        /* 医療顧問のレイアウトをモバイルで縦並びに */
+        div[style*="display: flex"][style*="gap: 50px"] {
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 20px !important;
+        }
+
+        /* 医療顧問の情報を中央揃えに */
+        div[style*="flex: 1"][style*="padding-top: 30px"] {
+          padding-top: 0 !important;
+          text-align: center !important;
+        }
+
+        /* メッセージボックスの調整 */
+        div[style*="background: #f9fafb"][style*="border-left: 4px solid"] {
+          margin-top: 20px !important;
+          text-align: left !important;
+        }
       }
 
       /* ヘッダー */
