@@ -167,6 +167,18 @@
           margin-top: 20px !important;
           text-align: left !important;
         }
+
+        /* オーストラリア全土から診療可能ですのモバイル調整 */
+        div[style*="padding: 25px 60px"] p[style*="font-size: 24px"],
+        div[style*="padding: 25px 80px"] p[style*="font-size: 24px"] {
+          font-size: 18px !important;
+          white-space: normal !important;
+        }
+
+        div[style*="padding: 25px 60px"],
+        div[style*="padding: 25px 80px"] {
+          padding: 20px 30px !important;
+        }
       }
 
       /* ヘッダー */
@@ -1727,7 +1739,8 @@
           </div>
           <div style="display: inline-block; padding: 25px 60px; background: #ecfdf5; border-radius: 12px; text-align: center;">
             <p style="color: #10b981; font-size: 24px; font-weight: bold; margin: 0; display: inline-block;">
-              オーストラリア全土から診療可能です
+              <span class="desktop-only">オーストラリア全土から診療可能です</span>
+              <span class="mobile-only">オーストラリア全土から<br>診療可能です</span>
             </p>
           </div>
         </div>
@@ -1875,9 +1888,9 @@
               </div>
             </div>
             <p class="step-description" style="color: #666; line-height: 1.8; font-size: 16px; margin: 20px auto 0; text-align: center; max-width: 500px;">
-              診察後すぐに処方箋をお渡しし、<br class="mobile-break">お近くの薬局で<br class="mobile-break">お薬を受け取れます。<br>
-              海外旅行保険の申請も<br class="mobile-break">フルサポート。<br>
-              必要書類の準備から申請まで、<br class="mobile-break">すべてお手伝いいたします。
+              診察後すぐに処方箋をお渡しし、お近くの薬局でお薬を受け取れます。<br>
+              海外旅行保険の申請もフルサポート。<br>
+              必要書類の準備から申請まで、すべてお手伝いいたします。
             </p>
           </div>
         </div>
@@ -1966,14 +1979,14 @@
     <!-- 選ばれる理由セクション -->
     <section class="reasons-section">
       <div class="reasons-container">
-        <h2 class="main-section-title">よつばオンラインメディカルが選ばれる理由</h2>
+        <h2 class="main-section-title"><span class="desktop-only">よつばオンラインメディカルが選ばれる理由</span><span class="mobile-only">よつばオンラインメディカルが<br>選ばれる理由</span></h2>
         <div class="reasons-grid-display">
           <div class="reason-display-item">
             <div class="reason-icon-wrapper">
               <div class="reason-icon"><i class="fas fa-calendar-alt"></i></div>
             </div>
             <div class="reason-title">予約が直ぐとれる</div>
-            <div class="reason-description">面倒な手続きは不要。スマホやPCから簡単に予約でき、思い立った時にすぐ診療枠を確保できます。</div>
+            <div class="reason-description"><span class="desktop-only">面倒な手続きは不要。スマホやPCから簡単に予約でき、思い立った時にすぐ診療枠を確保できます。</span><span class="mobile-only">面倒な手続きは不要。<br>スマホやPCから簡単に予約でき、<br>思い立った時にすぐ診療枠を確保できます。</span></div>
           </div>
           <div class="reason-display-item">
             <div class="reason-icon-wrapper">
@@ -2143,8 +2156,9 @@
 
           <!-- オーストラリア全土から診療可能です -->
           <div style="padding: 25px 80px; background: #ecfdf5; border-radius: 12px; text-align: center; max-width: 600px; width: 100%;">
-            <p style="color: #10b981; font-size: 24px; font-weight: bold; margin: 0; white-space: nowrap;">
-              オーストラリア全土から診療可能です
+            <p style="color: #10b981; font-size: 24px; font-weight: bold; margin: 0;">
+              <span class="desktop-only">オーストラリア全土から診療可能です</span>
+              <span class="mobile-only">オーストラリア全土から<br>診療可能です</span>
             </p>
           </div>
         </div>
