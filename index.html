@@ -179,6 +179,11 @@
         div[style*="padding: 25px 80px"] {
           padding: 20px 30px !important;
         }
+
+        /* 大分大学連携ボックスのモバイル調整 */
+        div[style*="background: #ecfdf5"][style*="border: 2px solid #10b981"] {
+          padding: 30px 15px !important;
+        }
       }
 
       /* ヘッダー */
@@ -2130,9 +2135,12 @@
           <h3 style="font-size: 24px; color: #10b981; margin-bottom: 25px;">大分大学連携</h3>
           <h4 style="font-size: 16px; color: #666; margin-bottom: 30px;">学術コンサルティング制度適用事業</h4>
           <p style="font-size: 15px; color: #333; line-height: 1.8; max-width: 800px; margin: 0 auto;">
-            当社は、<span style="color: #10b981; font-weight: bold;">大分大学による学術コンサルティング制度</span>の適用事業として、<br>
+            <span class="desktop-only">当社は、<span style="color: #10b981; font-weight: bold;">大分大学による学術コンサルティング制度</span>の適用事業として、<br>
             医療顧問による助言体制を整え、提供サービスの品質向上と<br>
-            安定的な運用を継続的に推進しています。
+            安定的な運用を継続的に推進しています。</span>
+            <span class="mobile-only">当社は、<span style="color: #10b981; font-weight: bold;">大分大学による<br>学術コンサルティング<br>制度</span>の適用事業として、<br>
+            医療顧問による助言体制を<br>整え、提供サービスの<br>
+            品質向上と安定的な運用を<br>継続的に推進しています。</span>
           </p>
         </div>
       </div>
