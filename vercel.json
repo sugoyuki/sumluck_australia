@@ -1,8 +1,9 @@
 {
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/",
-      "destination": "/aus",
+      "destination": "/aus/",
       "permanent": true
     }
   ]
