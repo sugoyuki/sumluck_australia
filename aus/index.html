@@ -1638,6 +1638,55 @@
           padding: 10px 8px;
           font-size: 12px;
         }
+
+        /* オーストラリア医療情報セクション */
+        .medical-info-section {
+          padding: 50px 0 !important;
+        }
+        .medical-info-section > div {
+          padding: 0 20px !important;
+        }
+        .medical-info-section h2 {
+          font-size: 22px !important;
+          margin-bottom: 20px !important;
+        }
+        .medical-info-section p {
+          font-size: 14px !important;
+        }
+
+        /* 概図: 縦並びに変更 */
+        .flow-chart {
+          flex-direction: column !important;
+          gap: 10px !important;
+        }
+        .flow-chart .flow-card {
+          max-width: 100% !important;
+          flex-direction: row !important;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+        .flow-chart .flow-card img {
+          width: 120px !important;
+          flex-shrink: 0;
+        }
+        .flow-chart .flow-card .flow-card-text {
+          text-align: left;
+        }
+        .flow-chart .flow-arrow {
+          transform: rotate(90deg);
+          padding: 0 !important;
+        }
+        .flow-chart .flow-arrow-with-label {
+          padding: 0 !important;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 8px;
+        }
+        .flow-chart .flow-arrow-with-label > div:first-child {
+          transform: rotate(90deg);
+        }
       }
     </style>
   </head>
@@ -1918,7 +1967,7 @@
     </section>
 
     <!-- オーストラリア医療情報案内 -->
-    <section style="padding: 80px 0; background: #f9fafb;">
+    <section class="medical-info-section" style="padding: 80px 0; background: #f9fafb;">
       <div style="max-width: 1000px; margin: 0 auto; padding: 0 60px;">
 
         <!-- 追加① オーストラリアでの医療の受け方 -->
@@ -1928,26 +1977,32 @@
         </p>
 
         <!-- 概図: GP → 専門医紹介 → 診療・検査 -->
-        <div style="display: flex; align-items: flex-start; justify-content: center; gap: 15px; margin-bottom: 20px;">
-          <div style="text-align: center; flex: 1; max-width: 260px;">
+        <div class="flow-chart" style="display: flex; align-items: flex-start; justify-content: center; gap: 15px; margin-bottom: 20px;">
+          <div class="flow-card" style="text-align: center; flex: 1; max-width: 260px;">
             <img src="imgs/GP受診.png" alt="GP受診" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
-            <div style="font-size: 14px; font-weight: bold; color: #1f2937;">GP受診</div>
-            <div style="font-size: 13px; color: #666;">診療・処方</div>
+            <div class="flow-card-text">
+              <div style="font-size: 14px; font-weight: bold; color: #1f2937;">GP受診</div>
+              <div style="font-size: 13px; color: #666;">診療・処方</div>
+            </div>
           </div>
-          <div style="text-align: center; flex: 0 0 50px; padding-top: 60px;">
+          <div class="flow-arrow-with-label" style="text-align: center; flex: 0 0 50px; padding-top: 60px;">
             <div style="font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
             <div style="font-size: 12px; color: #10b981; font-weight: bold; margin-top: 6px;">必要に応じて</div>
           </div>
-          <div style="text-align: center; flex: 1; max-width: 260px;">
+          <div class="flow-card" style="text-align: center; flex: 1; max-width: 260px;">
             <img src="imgs/専門医紹介.png" alt="専門医紹介" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
-            <div style="font-size: 14px; font-weight: bold; color: #1f2937;">専門医紹介</div>
+            <div class="flow-card-text">
+              <div style="font-size: 14px; font-weight: bold; color: #1f2937;">専門医紹介</div>
+            </div>
           </div>
-          <div style="text-align: center; flex: 0 0 50px; padding-top: 60px;">
+          <div class="flow-arrow" style="text-align: center; flex: 0 0 50px; padding-top: 60px;">
             <div style="font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
           </div>
-          <div style="text-align: center; flex: 1; max-width: 260px;">
+          <div class="flow-card" style="text-align: center; flex: 1; max-width: 260px;">
             <img src="imgs/診察検査.png" alt="診療・検査" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
-            <div style="font-size: 14px; font-weight: bold; color: #1f2937;">診療・検査</div>
+            <div class="flow-card-text">
+              <div style="font-size: 14px; font-weight: bold; color: #1f2937;">診療・検査</div>
+            </div>
           </div>
         </div>
         <p style="font-size: 13px; color: #888; text-align: center; margin-bottom: 40px;">※「GP」General Practitioner ― 日本でいう「かかりつけ医」にあたる存在</p>
@@ -1961,16 +2016,16 @@
           オンライン診察後、お薬が必要な場合は「電子処方箋（eScript）」が発行されます。<br>電子処方箋は、スマートフォンやメールで受け取ることができます。<br>オーストラリア国内の薬局でお薬を受け取ることが可能です。
         </p>
 
-        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px;">
-          <div style="flex: 1; max-width: 260px;">
+        <div class="flow-chart" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px;">
+          <div class="flow-card" style="flex: 1; max-width: 260px;">
             <img src="imgs/④男性医師.png" alt="オンライン診察" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
           </div>
-          <div style="flex: 0 0 auto; font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
-          <div style="flex: 1; max-width: 260px;">
+          <div class="flow-arrow" style="flex: 0 0 auto; font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
+          <div class="flow-card" style="flex: 1; max-width: 260px;">
             <img src="imgs/④スマホ.png" alt="電子処方箋の受取" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
           </div>
-          <div style="flex: 0 0 auto; font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
-          <div style="flex: 1; max-width: 260px;">
+          <div class="flow-arrow" style="flex: 0 0 auto; font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
+          <div class="flow-card" style="flex: 1; max-width: 260px;">
             <img src="imgs/④薬処方.png" alt="薬局でお薬受取" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
           </div>
         </div>
