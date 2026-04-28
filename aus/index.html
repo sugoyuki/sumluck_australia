@@ -1690,6 +1690,19 @@
           transform: rotate(90deg);
           display: inline-block;
         }
+
+        /* 通訳士紹介 モバイル */
+        .interpreter-cards {
+          flex-direction: column !important;
+          gap: 40px !important;
+        }
+        .interpreter-card {
+          max-width: 320px !important;
+        }
+        .interpreter-card img {
+          width: 180px !important;
+          height: 220px !important;
+        }
       }
     </style>
   </head>
@@ -1982,7 +1995,7 @@
         <!-- 概図: GP → 専門医紹介 → 診療・検査 -->
         <div class="flow-chart" style="display: flex; align-items: flex-start; justify-content: center; gap: 15px; margin-bottom: 20px;">
           <div class="flow-card" style="text-align: center; flex: 1; max-width: 260px;">
-            <img src="imgs/GP受診.png" alt="GP受診" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+            <img src="imgs/flow/GP受診.png" alt="GP受診" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
             <div class="flow-card-text">
               <div style="font-size: 14px; font-weight: bold; color: #1f2937;">GP受診</div>
               <div style="font-size: 13px; color: #666;">診療・処方</div>
@@ -1993,7 +2006,7 @@
             <div style="font-size: 12px; color: #10b981; font-weight: bold; margin-top: 6px;">必要に<br>応じて</div>
           </div>
           <div class="flow-card" style="text-align: center; flex: 1; max-width: 260px;">
-            <img src="imgs/専門医紹介.png" alt="専門医紹介" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+            <img src="imgs/flow/専門医紹介.png" alt="専門医紹介" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
             <div class="flow-card-text">
               <div style="font-size: 14px; font-weight: bold; color: #1f2937;">専門医紹介</div>
             </div>
@@ -2002,7 +2015,7 @@
             <div style="font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
           </div>
           <div class="flow-card" style="text-align: center; flex: 1; max-width: 260px;">
-            <img src="imgs/診察検査.png" alt="診療・検査" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+            <img src="imgs/flow/診察検査.png" alt="診療・検査" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
             <div class="flow-card-text">
               <div style="font-size: 14px; font-weight: bold; color: #1f2937;">診療・検査</div>
             </div>
@@ -2021,15 +2034,15 @@
 
         <div class="flow-chart" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px;">
           <div class="flow-card" style="flex: 1; max-width: 260px;">
-            <img src="imgs/④男性医師.png" alt="オンライン診察" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
+            <img src="imgs/flow/男性医師.png" alt="オンライン診察" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
           </div>
           <div class="flow-arrow" style="flex: 0 0 50px; text-align: center; font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
           <div class="flow-card" style="flex: 1; max-width: 260px;">
-            <img src="imgs/④スマホ.png" alt="電子処方箋の受取" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
+            <img src="imgs/flow/スマホ.png" alt="電子処方箋の受取" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
           </div>
           <div class="flow-arrow" style="flex: 0 0 50px; text-align: center; font-size: 28px; color: #10b981;"><i class="fas fa-arrow-right"></i></div>
           <div class="flow-card" style="flex: 1; max-width: 260px;">
-            <img src="imgs/④薬処方.png" alt="薬局でお薬受取" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
+            <img src="imgs/flow/薬処方.png" alt="薬局でお薬受取" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px;">
           </div>
         </div>
 
@@ -2146,6 +2159,33 @@
           <span class="desktop-only">言葉の心配なく、安心して診療を受けていただけるよう日本人通訳士がオンライン診察に同席いたします</span>
           <span class="mobile-only">言葉の心配なく、安心して診療を受けていただけるよう<br>日本人通訳士がオンライン診察に同席いたします</span>
         </p>
+
+        <!-- 通訳士紹介 -->
+        <div class="interpreter-cards" style="display: flex; justify-content: center; gap: 40px; margin-bottom: 60px;">
+          <!-- Daiki -->
+          <div class="interpreter-card" style="flex: 1; max-width: 300px; text-align: center;">
+            <img src="imgs/interpreters/Daiki_v3.JPG" alt="Daiki" style="width: 200px; height: 250px; object-fit: cover; object-position: top; border-radius: 8px; margin-bottom: 15px;">
+            <h4 style="font-size: 18px; color: #333; margin-bottom: 10px; font-weight: bold;">Daiki</h4>
+            <p style="font-size: 13px; color: #555; line-height: 1.8; text-align: left; margin-bottom: 12px;">日本国家資格の鍼灸師、薬膳家の顔を持ち、鍼灸師として世界80カ国以上を訪れ、多国籍の患者への施術経験を持つ。言語や文化の異なる患者に対しても、症状を正確に理解し、分かりやすく医師に伝えるコミュニケーションスキルを活かしている。安心して相談できる環境づくりを大切にしている。</p>
+            <p style="font-size: 12px; color: #888;">対応言語／日本語・英語</p>
+          </div>
+
+          <!-- Chiaki -->
+          <div class="interpreter-card" style="flex: 1; max-width: 300px; text-align: center;">
+            <img src="imgs/interpreters/Chiaki_v3.JPG" alt="Chiaki" style="width: 200px; height: 250px; object-fit: cover; object-position: top; border-radius: 8px; margin-bottom: 15px;">
+            <h4 style="font-size: 18px; color: #333; margin-bottom: 10px; font-weight: bold;">Chiaki</h4>
+            <p style="font-size: 13px; color: #555; line-height: 1.8; text-align: left; margin-bottom: 12px;">鍼灸師として13年以上の経験を持つ。2017年より海外での活動を開始。現在はヨーロッパを中心に国際的な環境で臨床経験を積んでいる。これまでの医療現場での経験を活かし、言語だけでなく文化的な背景も考慮した通訳・サポートを受けていただけるよう、丁寧で確かなコミュニケーションを心掛けている。</p>
+            <p style="font-size: 12px; color: #888;">対応言語／日本語・英語</p>
+          </div>
+
+          <!-- Miho -->
+          <div class="interpreter-card" style="flex: 1; max-width: 300px; text-align: center;">
+            <img src="imgs/interpreters/Miho_v3.JPG" alt="Miho" style="width: 200px; height: 250px; object-fit: cover; object-position: top; border-radius: 8px; margin-bottom: 15px;">
+            <h4 style="font-size: 18px; color: #333; margin-bottom: 10px; font-weight: bold;">Miho</h4>
+            <p style="font-size: 13px; color: #555; line-height: 1.8; text-align: left; margin-bottom: 12px;">同じく鍼灸師。高校時代にアメリカへ1年間留学し大学では英米文化を専攻。早くから英語環境での学びとコミュニケーション経験を積む。現在も英語での診療・施術に関わりを行っており、医療現場特有の専門用語や患者の不安に配慮した通訳を行う。</p>
+            <p style="font-size: 12px; color: #888;">対応言語／日本語・英語</p>
+          </div>
+        </div>
 
         <!-- 医療顧問紹介 -->
         <div style="background: white; border-radius: 12px; padding: 50px 40px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); max-width: 900px; margin: 60px auto 0;">
